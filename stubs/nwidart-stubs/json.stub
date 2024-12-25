@@ -1,0 +1,15 @@
+{
+    "name": "$STUDLY_NAME$",
+    "alias": "$LOWER_NAME$",
+    "description": "",
+    "keywords": [],
+    "authors": [],
+    "license": "",
+    "version": "1.0.0",
+    "remote_version_url": "",
+    "priority": 0,
+    "providers": [
+        "$MODULE_NAMESPACE$\\$STUDLY_NAME$\\$PROVIDER_NAMESPACE$\\$STUDLY_NAME$ServiceProvider"
+    ],
+    "files": []
+}

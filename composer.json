@@ -1,14 +1,29 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "cyanfox/base",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "A modular extendable Base System based on Laravel 11\n\n",
+    "keywords": [
+        "laravel",
+        "cyanfox",
+        "base",
+        "modules",
+        "livewire"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "filament/notifications": "^3.2",
         "laravel/framework": "^11.31",
-        "laravel/tinker": "^2.9"
+        "laravel/reverb": "^1.0",
+        "laravel/tinker": "^2.9",
+        "livewire/livewire": "^3.5",
+        "mhmiton/laravel-modules-livewire": "^4.3",
+        "nwidart/laravel-modules": "^11.1",
+        "pusher/pusher-php-server": "^7.2",
+        "rawilk/laravel-settings": "^3.4",
+        "realzone22/pengublade": "^0.1.0",
+        "wire-elements/modal": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -22,6 +37,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Modules\\": "modules/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
@@ -34,7 +50,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
@@ -55,6 +72,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "modules/*/composer.json"
+            ]
         }
     },
     "config": {
@@ -63,7 +85,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "minimum-stability": "stable",
