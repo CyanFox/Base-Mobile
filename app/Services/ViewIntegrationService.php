@@ -2,74 +2,55 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Blade;
+use Closure;
+use Illuminate\Support\Collection;
 
 class ViewIntegrationService
 {
-    protected array $sections = [];
+    protected array $integrations = [];
 
-    protected ?string $currentSection = null;
-
-    public function registerBladeDirectives()
+    public function add(string $name, ...$params)
     {
-        Blade::directive('cfSection', function ($expression) {
-            return "<?php app('".ViewIntegrationService::class."')->startSection($expression); ob_start(); ?>";
-        });
-
-        Blade::directive('cfEndSection', function () {
-            return "<?php \$content = ob_get_clean(); app('".ViewIntegrationService::class."')->endSection(\$content); ?>";
-        });
-
-        Blade::directive('cfOverwriteSection', function ($expression) {
-            return "<?php app('".ViewIntegrationService::class."')->startSection($expression); ob_start(); ?>";
-        });
-
-        Blade::directive('cfEndOverwriteSection', function () {
-            return "<?php \$content = ob_get_clean(); app('".ViewIntegrationService::class."')->endOverwriteSection(\$content); ?>";
-        });
-
-        Blade::directive('cfRenderSection', function ($expression) {
-            return "<?php echo app('".ViewIntegrationService::class."')->renderSection($expression); ?>";
-        });
+        $args = func_get_args();
+        array_splice($args, 0, 1);
+        $this->integrations[$name][] = $args;
     }
 
-    public function startSection(string $name)
+    public function addView(string $name, string $view)
     {
-        $this->currentSection = $name;
+        $content = view($view)->render();
+        $this->add($name, $content);
     }
 
-    public function endSection(string $content)
+    public function get(?string $name = null)
     {
-        if ($this->currentSection) {
-            $this->addSection($this->currentSection, $content);
-            $this->currentSection = null;
+        $integrations = $this->integrations;
+        if ($name != null) {
+            if (!isset($this->menu[$name])) {
+                return null;
+            }
+            $integrations = $this->integrations[$name];
         }
+
+        return new Collection($integrations);
     }
 
-    public function endOverwriteSection(string $content)
+    public function getAll(): array
     {
-        if ($this->currentSection) {
-            $this->overwriteSection($this->currentSection, $content);
-            $this->currentSection = null;
-        }
+        return $this->integrations;
     }
 
-    public function addSection(string $name, string $content)
+    public function render(string $name, Closure $callback): ?string
     {
-        $this->sections[$name][] = $content;
-    }
-
-    public function overwriteSection(string $name, string $content)
-    {
-        $this->sections[$name] = [$content];
-    }
-
-    public function renderSection(string $name): ?string
-    {
-        if (! isset($this->sections[$name])) {
+        if (!isset($this->integrations[$name])) {
             return null;
         }
 
-        return implode('', $this->sections[$name]);
+        $result = '';
+        foreach ($this->integrations[$name] as $integration) {
+            $result .= call_user_func($callback, ...$integration);
+        }
+
+        return $result;
     }
 }

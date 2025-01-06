@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-use App\Events\LivewireError;
 use Exception;
 use Livewire\Component;
 
@@ -14,18 +13,6 @@ class CFComponent extends Component
             $message = $message->getMessage();
         }
         $this->dispatch('logger', ['type' => $level, 'message' => $message]);
-    }
-
-    public function exception($e, $stopPropagation)
-    {
-        LivewireError::dispatch($e);
-
-        if (app()->environment('local') || app()->environment('testing')) {
-            throw $e;
-        }
-
-        $this->log($e, 'error');
-        $stopPropagation();
     }
 
     public function renderView($view, $title, $layout = 'components.layouts.guest', $params = [])

@@ -1,5 +1,5 @@
 @props([
-    'variant' => null,
+    'variant' => 'solid',
     'color' => 'primary',
     'link' => null,
     'loading' => null,
@@ -19,8 +19,8 @@
     }
 @endphp
 
-@inject('buttonService', 'RealZone22\PenguBlade\Services\PenguBlade\ButtonCvaService')
-@inject('spinnerService', 'RealZone22\PenguBlade\Services\PenguBlade\SpinnerCvaService')
+@inject('buttonService', 'App\Services\PenguBlade\ButtonCvaService')
+@inject('spinnerService', 'App\Services\PenguBlade\SpinnerCvaService')
 
 @if($link)
     <a {{ $attributes->twMerge($buttonService::new()([$variant => $color])) }} href="{{ $link }}"
@@ -41,7 +41,7 @@
         @if($loading)
             <svg wire:loading wire:target="{{ loadingTarget($attributes, $loading) }}"
                  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                 class="{{ $spinnerService::new()(['color' => $color]) }}">
+                 class="{{ $spinnerService::new()(['button' => $color]) }}">
                 <path opacity="0.25"
                       d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                 <path

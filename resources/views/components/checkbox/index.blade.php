@@ -7,7 +7,7 @@
        class="flex cursor-pointer items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 [&:has(input:checked)]:text-neutral-900 dark:[&:has(input:checked)]:text-white [&:has(input:disabled)]:opacity-75 [&:has(input:disabled)]:cursor-not-allowed">
     <div class="relative flex items-center">
         <input id="{{ $uuid }}" type="checkbox"
-            {{ $attributes->twMerge("before:content[''] peer relative size-4 cursor-pointer appearance-none overflow-hidden rounded bg-neutral-50 before:absolute before:inset-0 checked:before:bg-black focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-neutral-800 checked:focus:outline-black active:outline-offset-0 disabled:cursor-not-allowed dark:bg-neutral-900 dark:checked:before:bg-white dark:focus:outline-neutral-300 dark:checked:focus:outline-white") }}/>
+            {{ $attributes->twMerge("before:content[''] peer relative size-4 cursor-pointer appearance-none overflow-hidden rounded border border-neutral-300 bg-neutral-50 before:absolute before:inset-0 checked:border-black checked:before:bg-black focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-neutral-800 checked:focus:outline-black active:outline-offset-0 disabled:cursor-not-allowed dark:border-neutral-700 dark:bg-neutral-900 dark:checked:border-white dark:checked:before:bg-white dark:focus:outline-neutral-300 dark:checked:focus:outline-white") }}/>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none"
              stroke-width="4"

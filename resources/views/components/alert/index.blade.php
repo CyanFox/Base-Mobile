@@ -3,7 +3,7 @@
     'dismissIcon' => 'icon-x',
     'color' => 'info',
 ])
-@inject('alertService', 'RealZone22\PenguBlade\Services\PenguBlade\AlertCvaService')
+@inject('alertService', 'App\Services\PenguBlade\AlertCvaService')
 
 @if($dismissable)
     <div x-data="{ alertIsVisible: true }" x-show="alertIsVisible"

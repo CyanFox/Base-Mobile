@@ -7,7 +7,7 @@
 ])
 
 
-@inject('progressService', 'RealZone22\PenguBlade\Services\PenguBlade\ProgressCvaService')
+@inject('progressService', 'App\Services\PenguBlade\ProgressCvaService')
 
 <div
     x-data="{ currentVal: {{ $current }}, minVal: {{ $min }}, maxVal: {{ $max }}, calcPercentage(min, max, val){return (((val-min)/(max-min))*100).toFixed(0)} }"

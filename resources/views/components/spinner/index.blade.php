@@ -2,7 +2,7 @@
     'color' => 'primary',
 ])
 
-@inject('spinnerService', 'RealZone22\PenguBlade\Services\PenguBlade\SpinnerCvaService')
+@inject('spinnerService', 'App\Services\PenguBlade\SpinnerCvaService')
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
     {{ $attributes->twMerge($spinnerService::new()(['color' => $color])) }}>
