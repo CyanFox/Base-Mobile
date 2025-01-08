@@ -6,7 +6,7 @@ use App\Services\SettingsService;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static string|null getSetting(string $key, void $isLocked = false, bool $isEncrypted = true)
+ * @method static string|null getSetting(string $key, void $default = null, void $isLocked = false, bool $isEncrypted = true)
  * @method static \App\Models\Setting setSetting(string $key, string|null $value = null, bool $isLocked = false, bool $isEncrypted = true, bool $updateIfExists = false)
  * @method static \App\Models\Setting updateSetting(string $key, string|null $value, bool $isLocked = false, bool $isEncrypted = true)
  * @method static void updateSettings(array $settings)

@@ -27,9 +27,9 @@ class ViewIntegration extends Component
                 $view = viewIntegration()->render($name, function ($content) {
                     return $content;
                 });
-            @endphp
 
-            {!! $view !!}
+                echo Blade::render($view);
+            @endphp
         HTML;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Facades;
+namespace App\Http;
 
 use App\Services\ViewIntegrationService;
 use Illuminate\Support\Facades\Facade;
