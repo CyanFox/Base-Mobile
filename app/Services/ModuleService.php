@@ -6,11 +6,11 @@ use App\Facades\VersionManager;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
-use Nwidart\Modules\Module;
+use Nwidart\Modules\Facades\Module;
 
 class ModuleService
 {
-    public function getRequirements($module): ?array
+    public function getRequirements(string $module): ?array
     {
         $module = Module::find($module);
 
@@ -21,7 +21,7 @@ class ModuleService
         return null;
     }
 
-    public function checkRequirements($module): bool
+    public function checkRequirements(string $module): bool
     {
         $requirements = $this->getRequirements($module);
 
@@ -48,21 +48,21 @@ class ModuleService
         return true;
     }
 
-    public function getVersion($module): ?string
+    public function getVersion(string $module): ?string
     {
         $module = Module::find($module);
 
         return $module->get('version');
     }
 
-    public function getBaseVersion($module): ?string
+    public function getBaseVersion(string $module): ?string
     {
         $module = Module::find($module);
 
         return $module->get('version');
     }
 
-    public function checkBaseVersion($module): bool
+    public function checkBaseVersion(string $module): bool
     {
         $module = Module::find($module);
 
@@ -73,21 +73,21 @@ class ModuleService
         return true;
     }
 
-    public function getAuthors($module): ?array
+    public function getAuthors(string $module): ?array
     {
         $module = Module::find($module);
 
         return $module->get('authors');
     }
 
-    public function getKeywords($module): ?array
+    public function getKeywords(string $module): ?array
     {
         $module = Module::find($module);
 
         return $module->get('keywords');
     }
 
-    public function getDescription($module): ?string
+    public function getDescription(string $module): ?string
     {
         $module = Module::find($module);
 
@@ -95,7 +95,7 @@ class ModuleService
     }
 
 
-    public function getSettingsPage($module): ?string
+    public function getSettingsPage(string $module): ?string
     {
         $module = Module::find($module);
 
@@ -106,7 +106,7 @@ class ModuleService
         return null;
     }
 
-    public function getRemoteVersion($module): ?string
+    public function getRemoteVersion(string $module): ?string
     {
         $module = Module::find($module);
 

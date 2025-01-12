@@ -23,12 +23,7 @@
 @inject('spinnerService', 'App\Services\PenguBlade\SpinnerCvaService')
 
 @if($link)
-    <a {{ $attributes->twMerge($buttonService::new()([$variant => $color])) }} href="{{ $link }}"
-       @if($loading)
-           wire:target="{{ loadingTarget($attributes, $loading) }}"
-       wire:loading.attr="disabled"
-        @endif
-    >
+    <a {{ $attributes->twMerge($buttonService::new()([$variant => $color])) }} href="{{ $link }}">
         {{ $slot }}
     </a>
 @else

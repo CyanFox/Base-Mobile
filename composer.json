@@ -20,6 +20,7 @@
         "livewire/livewire": "^3.5",
         "mhmiton/laravel-modules-livewire": "^4.3",
         "nwidart/laravel-modules": "^11.1",
+        "power-components/livewire-powergrid": "^6.1",
         "pusher/pusher-php-server": "^7.2",
         "realzone22/pengublade": "^0.1.0",
         "wire-elements/modal": "^2.0"

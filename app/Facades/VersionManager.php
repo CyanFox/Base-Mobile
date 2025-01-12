@@ -7,12 +7,9 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static string getCurrentBaseVersion()
- * @method static string getCurrentProjectVersion()
  * @method static bool|null isDevVersion()
- * @method static string getRemoteTemplateVersion()
- * @method static string getRemoteProjectVersion()
+ * @method static string getRemoteBaseVersion()
  * @method static bool isBaseUpToDate()
- * @method static bool isProjectUpToDate()
  *
  * @see \App\Services\VersionService
  */
