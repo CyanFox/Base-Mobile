@@ -5,17 +5,22 @@ namespace App\Services;
 use App\Models\Setting;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class SettingsService
 {
 
-    public function getSetting(string $key, $default = null, $isLocked = false, bool $isEncrypted = true): ?string
+    public function getSetting(string $key, $default = null, $isLocked = false, bool $isEncrypted = false): ?string
     {
         try {
             $setting = Setting::where('key', $key)->first();
 
             if ($setting == null) {
                 $setting = $this->setSetting($key, $default, isLocked: $isLocked, isEncrypted: $isEncrypted);
+            }
+
+            if (Str::contains($key, ['key', 'password', 'secret', 'token'])) {
+                $isEncrypted = true;
             }
 
             if ($isEncrypted) {
@@ -40,9 +45,13 @@ class SettingsService
         }
     }
 
-    public function setSetting(string $key, ?string $value = null, bool $isLocked = false, bool $isEncrypted = true, bool $updateIfExists = false): Setting
+    public function setSetting(string $key, ?string $value = null, bool $isLocked = false, bool $isEncrypted = false, bool $updateIfExists = false): Setting
     {
         $setting = Setting::where('key', $key)->first();
+
+        if (Str::contains($key, ['key', 'password', 'secret', 'token'])) {
+            $isEncrypted = true;
+        }
 
         if ($setting == null) {
             $setting = new Setting;
@@ -75,6 +84,10 @@ class SettingsService
     public function updateSetting(string $key, ?string $value, bool $isLocked = false, bool $isEncrypted = true): Setting
     {
         $setting = Setting::where('key', $key)->first();
+
+        if (Str::contains($key, ['key', 'password', 'secret', 'token'])) {
+            $isEncrypted = true;
+        }
 
         if ($setting != null) {
             if ($setting->is_locked) {
