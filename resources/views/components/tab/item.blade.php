@@ -1,4 +1,5 @@
 @props([
+    // dont replace with alpine
     'uuid' => 'pengublade-tab-' . str()->uuid(),
     'href' => null,
 ])
