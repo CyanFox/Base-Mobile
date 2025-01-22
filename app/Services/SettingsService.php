@@ -62,11 +62,9 @@ class SettingsService
                 $value = ($isEncrypted) ? encrypt(config($key)) : config($key);
             }
 
-            if ($value != null) {
-                $setting->value = $value;
-                $setting->is_locked = $isLocked;
-                $setting->save();
-            }
+            $setting->value = $value;
+            $setting->is_locked = $isLocked;
+            $setting->save();
         } elseif ($updateIfExists) {
             if ($setting->is_locked) {
                 Log::debug('Attempted to update locked setting: ' . $setting->key);
@@ -81,7 +79,7 @@ class SettingsService
         return $setting;
     }
 
-    public function updateSetting(string $key, ?string $value, bool $isLocked = false, bool $isEncrypted = true): Setting
+    public function updateSetting(string $key, ?string $value, bool $isLocked = false, bool $isEncrypted = false): Setting
     {
         $setting = Setting::where('key', $key)->first();
 

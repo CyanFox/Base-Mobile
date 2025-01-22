@@ -1,6 +1,7 @@
 <?php
 
 use App\Facades\SettingsManager;
+use App\Services\ModuleService;
 use App\Services\SettingsService;
 use App\Services\ViewIntegrationService;
 
@@ -19,5 +20,12 @@ if (!function_exists('settings')) {
         }
 
         return SettingsManager::getSetting($key, $default, $isLocked);
+    }
+}
+
+if (!function_exists('modules')) {
+    function modules()
+    {
+        return new ModuleService();
     }
 }

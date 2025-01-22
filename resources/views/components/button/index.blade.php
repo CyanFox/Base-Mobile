@@ -28,6 +28,9 @@
     </a>
 @else
     <button {{ $attributes->twMerge($buttonService::new()([$variant => $color])) }}
+        @if(!$attributes->whereStartsWith('type')->first())
+            type="button"
+        @endif
             @if($loading)
                 wire:target="{{ loadingTarget($attributes, $loading) }}"
             wire:loading.attr="disabled"

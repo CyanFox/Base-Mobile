@@ -22,15 +22,15 @@
             @endif
         </label>
         <div @dblclick.prevent class="flex items-center">
-            <button @click="currentVal = Math.max(minVal, currentVal - incrementAmount)"
-                    class="flex h-10 items-center justify-center rounded-l-md bg-neutral-50 px-4 py-2 text-neutral-600 hover:opacity-75 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-neutral-900 dark:text-neutral-300 dark:focus-visible:outline-white"
+            <button @click="currentVal = Math.max(minVal, currentVal - incrementAmount)" type="button"
+                    class="flex h-10 items-center justify-center rounded-l-md border border-neutral-300 bg-neutral-50 px-4 py-2 text-neutral-600 hover:opacity-75 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:focus-visible:outline-white"
                     aria-label="subtract">
                 <i class="{{ $minusIcon }}"></i>
             </button>
             <input x-model="currentVal.toFixed(decimalPoints)" x-bind:id="uuid" type="text"
-                {{ $attributes->twMerge('border-x-none h-10 w-20 rounded-none bg-neutral-50/50 text-center text-neutral-900 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:bg-neutral-900/50 dark:text-white dark:focus-visible:outline-white') }}/>
-            <button @click="currentVal = Math.min(maxVal, currentVal + incrementAmount)"
-                    class="flex h-10 items-center justify-center rounded-r-md bg-neutral-50 px-4 py-2 text-neutral-600 hover:opacity-75 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-neutral-900 dark:text-neutral-300 dark:focus-visible:outline-white"
+                {{ $attributes->twMerge('border-x-none h-10 w-20 rounded-none border-y border-neutral-300 bg-neutral-50/50 text-center text-neutral-900 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black dark:border-neutral-700 dark:bg-neutral-900/50 dark:text-white dark:focus-visible:outline-white') }}/>
+            <button @click="currentVal = Math.min(maxVal, currentVal + incrementAmount)" type="button"
+                    class="flex h-10 items-center justify-center rounded-r-md border border-neutral-300 bg-neutral-50 px-4 py-2 text-neutral-600 hover:opacity-75 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:focus-visible:outline-white"
                     aria-label="add">
                 <i class="{{ $plusIcon }}"></i>
             </button>
