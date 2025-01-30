@@ -6,6 +6,7 @@ use App\Services\ModuleService;
 use Illuminate\Support\Facades\Facade;
 
 /**
+ * @method static void getModule(void $module)
  * @method static array|null getRequirements(string $module)
  * @method static bool checkRequirements(string $module)
  * @method static string|null getVersion(string $module)
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static string|null getDescription(string $module)
  * @method static string|null getSettingsPage(string $module)
  * @method static string|null getRemoteVersion(string $module)
+ * @method static bool installModule(string $path)
+ * @method static bool installModuleFromURL(string $url)
  *
  * @see \App\Services\ModuleService
  */
