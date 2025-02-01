@@ -7,8 +7,8 @@
         @endif
 
         @if($icon)
-            <div class="flex justify-center mt-4">
-                <i class="{{ $icon }} text-6xl {{ $iconColor ? 'text-' . $iconColor : '' }}"></i>
+            <div class="flex justify-center mt-4 text-6xl">
+                <i class="{{ $icon }} {{ $iconColor ? 'text-' . $iconColor : 'text-yellow-400' }}"></i>
             </div>
         @endif
 

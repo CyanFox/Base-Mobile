@@ -35,7 +35,7 @@ trait WithConfirmation
         return $this;
     }
 
-    public function icon($icon, $color = 'info')
+    public function icon($icon, $color = 'yellow-400')
     {
         $this->confirmationData['icon'] = $icon;
         $this->confirmationData['iconColor'] = $color;
