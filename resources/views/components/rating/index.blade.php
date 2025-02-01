@@ -10,7 +10,7 @@
     <div x-data="{ currentVal: {{ $current }}, uuid: Math.random().toString(20).substring(2, 20) }" class="flex items-center gap-1">
         @for($i = 1; $i <= $amount; $i++)
             <label
-                x-bind:for="uuid + '_' + @{{ $i }}" {{ $attributes->twMerge('cursor-pointer transition hover:scale-125 has-[:focus]:scale-125') }}>
+                x-bind:for="uuid + '_' + @{{ $i }}" {{ $attributes->twMerge('cursor-pointer transition hover:scale-125 has-focus:scale-125') }}>
                 <span class="sr-only">{{ $i }} star</span>
                 <input x-model="currentVal" x-bind:id="uuid + '_' + @{{ $i }}" type="radio" class="sr-only" name="rating"
                        value="{{ $i }}">

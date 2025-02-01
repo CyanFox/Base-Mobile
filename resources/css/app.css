@@ -1,40 +1,62 @@
+@import 'tailwindcss';
 @import url('bootstrap-icons/font/bootstrap-icons.min.css');
 @import url('lucide-static/font/lucide.css');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+@font-face {
+    font-family: "bootstrap-icons";
+    src: url('bootstrap-icons/font/fonts/bootstrap-icons.woff2') format('woff2'),
+    url('bootstrap-icons/font/fonts/bootstrap-icons.woff') format('woff');
+}
+
+@font-face {
+    font-family: "lucide";
+    src: url('lucide-static/font/lucide.woff2') format('woff2'),
+    url('lucide-static/font/lucide.woff') format('woff');
+}
+
+@config '../../tailwind.config.js';
+
+/* Compatibility styles for Tailwind CSS v4 */
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
 
 /* PowerGrid Tables */
 #pg-footer {
-    @apply dark:bg-neutral-900 !important;
-    @apply bg-white !important;
+    @apply dark:bg-neutral-900!;
+    @apply bg-white!;
 }
 
 #pg-header-export button {
-    @apply dark:bg-neutral-900 !important;
-    @apply dark:ring-neutral-700 !important;
-    @apply bg-white !important;
+    @apply dark:bg-neutral-900!;
+    @apply dark:ring-neutral-700!;
+    @apply bg-white!;
 }
 
 #pg-header-export div {
-    @apply dark:bg-neutral-900 !important;
-    @apply bg-white !important;
-    @apply dark:ring-neutral-700 !important;
+    @apply dark:bg-neutral-900!;
+    @apply bg-white!;
+    @apply dark:ring-neutral-700!;
 }
 
 [aria-label="Pagination Navigation"] div a {
-    @apply dark:bg-neutral-900 !important;
-    @apply bg-white !important;
+    @apply dark:bg-neutral-900!;
+    @apply bg-white!;
 }
 
 [aria-label="Pagination Navigation"] div span {
-    @apply dark:bg-neutral-800 !important;
-    @apply bg-white !important;
-    @apply rounded-sm !important;
+    @apply dark:bg-neutral-800!;
+    @apply bg-white!;
+    @apply rounded-xs!;
 }
 
 [aria-label="Pagination Navigation"] {
-    @apply border border-white rounded-md !important;
-    @apply dark:border-neutral-700 !important;
+    @apply border border-white rounded-md!;
+    @apply dark:border-neutral-700!;
 }
