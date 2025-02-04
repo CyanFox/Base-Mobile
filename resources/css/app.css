@@ -1,19 +1,6 @@
 @import 'tailwindcss';
-@import url('bootstrap-icons/font/bootstrap-icons.min.css');
-@import url('lucide-static/font/lucide.css');
-
-@font-face {
-    font-family: "bootstrap-icons";
-    src: url('bootstrap-icons/font/fonts/bootstrap-icons.woff2') format('woff2'),
-    url('bootstrap-icons/font/fonts/bootstrap-icons.woff') format('woff');
-}
-
-@font-face {
-    font-family: "lucide";
-    src: url('lucide-static/font/lucide.woff2') format('woff2'),
-    url('lucide-static/font/lucide.woff') format('woff');
-}
-
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'lucide-static/font/lucide.css';
 @config '../../tailwind.config.js';
 
 /* Compatibility styles for Tailwind CSS v4 */
