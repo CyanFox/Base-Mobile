@@ -1,0 +1,49 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+    branches:
+      - v4-develop
+      - v4
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:stable-dind
+        options: --privileged
+        env:
+          DOCKER_DRIVER: overlay2
+          DOCKER_HOST: tcp://localhost:2375
+          DOCKER_TLS_CERTDIR: ""
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+          coverage: none
+
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install dependencies
+        run: |
+          composer update --prefer-dist --no-interaction
+
+      - name: List Installed Dependencies
+        run: composer show -D
+
+      - name: Test
+        run: |
+          cp .env.testing .env
+
+          php artisan test

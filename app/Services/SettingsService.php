@@ -30,7 +30,11 @@ class SettingsService
                 }
             }
 
-            if ($setting->value == null) {
+            if ($default != null && $setting->value == null) {
+                return $default;
+            }
+
+            if ($setting->value == null && $default == null) {
                 return config($key);
             }
 
@@ -40,6 +44,9 @@ class SettingsService
                 default => $setting->value,
             };
         } catch (Exception) {
+            if ($default != null) {
+                return $default;
+            }
             return config($key);
         }
     }

@@ -36,12 +36,12 @@ class VersionService
 
     public function getRemoteBaseVersion(): string
     {
-        if (settings('internal.versions.base_url', config('settings.versions.base_url')) == null) {
+        if (settings('internal.versions.base_url', config('settings.base_url')) == null) {
             return 'N/A';
         }
 
         try {
-            $url = settings('internal.versions.base_url', config('settings.versions.base_url'));
+            $url = settings('internal.versions.base_url', config('settings.base_url'));
             $data = json_decode(file_get_contents($url), true);
 
             if ($data['base'] == null) {
