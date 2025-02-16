@@ -17,7 +17,7 @@ class ModuleService
         return Module::find($module);
     }
 
-    public function getRequirements(string $module): ?array
+    public function getRequirements(string $module): array
     {
         $module = Module::find($module);
 
@@ -25,7 +25,7 @@ class ModuleService
             return $module->get('require');
         }
 
-        return null;
+        return [];
     }
 
     public function checkRequirements(string $module): bool
