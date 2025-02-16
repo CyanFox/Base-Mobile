@@ -47,6 +47,7 @@ class SettingsService
             if ($default != null) {
                 return $default;
             }
+
             return config($key);
         }
     }
