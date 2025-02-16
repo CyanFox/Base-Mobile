@@ -16,7 +16,7 @@ class VersionTest extends TestCase
         $version = VersionManager::getCurrentBaseVersion();
 
         if ($version === 'N/A') {
-            $this->markTestSkipped('Template version is not available.' . self::MISSING_VERSION);
+            $this->markTestSkipped('Template version is not available.'.self::MISSING_VERSION);
         }
 
         $this->assertIsString($version);
@@ -40,7 +40,7 @@ class VersionTest extends TestCase
         $isDev = VersionManager::isDevVersion();
 
         if ($isDev === null) {
-            $this->markTestSkipped('Dev version is not available.' . self::MISSING_VERSION);
+            $this->markTestSkipped('Dev version is not available.'.self::MISSING_VERSION);
         }
 
         $this->assertIsBool($isDev);
