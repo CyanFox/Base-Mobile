@@ -6,7 +6,7 @@
 ])
 
 <div>
-    <div class="flex w-full max-w-md flex-col gap-1 text-neutral-600 dark:text-neutral-300"
+    <div class="flex w-full flex-col gap-1 text-neutral-600 dark:text-neutral-300"
          x-data="{ uuid: Math.random().toString(20).substring(2, 20) }">
         @if($label)
             <label x-bind:for="uuid" class="w-fit pl-0.5 text-sm">
@@ -18,7 +18,7 @@
             </label>
         @endif
         <textarea x-bind:id="uuid"
-              {{ $attributes->twMerge('w-full rounded-md bg-neutral-50 px-2.5 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-75 dark:bg-neutral-900/50 dark:focus-visible:outline-white') }}>
+              {{ $attributes->twMerge('w-full rounded-md border border-neutral-300 bg-neutral-50 px-2 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-75 dark:border-neutral-700 dark:bg-neutral-900/50 dark:focus-visible:outline-white') }}>
         {{ $slot }}
     </textarea>
     </div>
