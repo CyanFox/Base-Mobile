@@ -19,12 +19,16 @@
         @endif
 
         <x-modal.footer>
-            <x-button wire:click="closeModal" loading="closeModal" class="w-full lg:w-1/2" :color="$cancelColor">
-                {{ $cancel }}
-            </x-button>
-            <x-button wire:click="confirmAction" loading="confirmAction" class="w-full lg:w-1/2" :color="$confirmColor">
-                {{ $confirm }}
-            </x-button>
+            @if($cancel)
+                <x-button wire:click="closeModal" loading="closeModal" class="w-full {{ $confirm ? 'lg:w-1/2' : '' }}" :color="$cancelColor">
+                    {{ $cancel }}
+                </x-button>
+            @endif
+            @if($confirm)
+                <x-button wire:click="confirmAction" loading="confirmAction" class="w-full {{ $cancel ? 'lg:w-1/2' : '' }}" :color="$confirmColor">
+                    {{ $confirm }}
+                </x-button>
+            @endif
         </x-modal.footer>
     @endif
 </div>

@@ -10,7 +10,7 @@
     </h3>
     @if($showCloseButton)
         <button @if($useWireModal) wire:click="closeModal" @else @click="modalIsOpen = false" @endif
-                aria-label="close modal">
+                aria-label="close modal" class="cursor-pointer">
             <i class="{{ $closeIcon }}"></i>
         </button>
     @endif
