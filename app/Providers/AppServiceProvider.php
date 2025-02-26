@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             'settings.force_https' => settings('internal.app.force_https', config('settings.force_https')),
         ];
 
-        if (!config('settings.disable_db_settings') && config('app.env') !== 'testing') {
+        if (! config('settings.disable_db_settings') && config('app.env') !== 'testing') {
             foreach ($configValues as $key => $value) {
                 Config::set($key, $value);
             }
