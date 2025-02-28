@@ -22,7 +22,7 @@
         "nwidart/laravel-modules": "^12.0",
         "power-components/livewire-powergrid": "^6.1",
         "pusher/pusher-php-server": "^7.2",
-        "realzone22/pengublade": "^0.1.0",
+        "realzone22/pengublade": "^0.2.0",
         "wire-elements/modal": "^2.0"
     },
     "require-dev": {
