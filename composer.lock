@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e435af495b0285d9c765202c560b80f",
+    "content-hash": "6e79b1e08095e121ec59c0819122c6cb",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4021,16 +4021,16 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "v11.1.10",
+            "version": "v12.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "6a987af3103bcf2dc31ebd18a68373bc8c7a99f7"
+                "reference": "9d53ad7fbf161ddbf23be109ac77ad8962d83ead"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/6a987af3103bcf2dc31ebd18a68373bc8c7a99f7",
-                "reference": "6a987af3103bcf2dc31ebd18a68373bc8c7a99f7",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/9d53ad7fbf161ddbf23be109ac77ad8962d83ead",
+                "reference": "9d53ad7fbf161ddbf23be109ac77ad8962d83ead",
                 "shasum": ""
             },
             "require": {
@@ -4042,10 +4042,10 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^v3.52",
-                "laravel/framework": "^v11.33",
+                "laravel/framework": "^v12.0",
                 "laravel/pint": "^1.16",
                 "mockery/mockery": "^1.6",
-                "orchestra/testbench": "^v9.0",
+                "orchestra/testbench": "^v10.0",
                 "phpstan/phpstan": "^1.4",
                 "phpunit/phpunit": "^11.0",
                 "spatie/phpunit-snapshot-assertions": "^5.0"
@@ -4094,7 +4094,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nWidart/laravel-modules/issues",
-                "source": "https://github.com/nWidart/laravel-modules/tree/v11.1.10"
+                "source": "https://github.com/nWidart/laravel-modules/tree/v12.0.0"
             },
             "funding": [
                 {
@@ -4106,7 +4106,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-18T09:58:04+00:00"
+            "time": "2025-02-24T22:02:47+00:00"
         },
         {
             "name": "openspout/openspout",
