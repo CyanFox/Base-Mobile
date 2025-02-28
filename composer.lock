@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e94f71c71ec212b5e65c839f41a3a87",
+    "content-hash": "d4a479f193a45a5960aa969068cc6185",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5860,16 +5860,16 @@
         },
         {
             "name": "realzone22/pengublade",
-            "version": "0.1.2",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RealZone22/PenguBlade.git",
-                "reference": "b23dc90edac5403edce5db60073a880a0ed4a128"
+                "reference": "fe808ee9d4b8b25f1540fa787aa01490801b6eb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RealZone22/PenguBlade/zipball/b23dc90edac5403edce5db60073a880a0ed4a128",
-                "reference": "b23dc90edac5403edce5db60073a880a0ed4a128",
+                "url": "https://api.github.com/repos/RealZone22/PenguBlade/zipball/fe808ee9d4b8b25f1540fa787aa01490801b6eb8",
+                "reference": "fe808ee9d4b8b25f1540fa787aa01490801b6eb8",
                 "shasum": ""
             },
             "require": {
@@ -5930,7 +5930,7 @@
             ],
             "support": {
                 "issues": "https://github.com/RealZone22/PenguBlade/issues",
-                "source": "https://github.com/RealZone22/PenguBlade/tree/0.1.2"
+                "source": "https://github.com/RealZone22/PenguBlade/tree/0.2.0"
             },
             "funding": [
                 {
@@ -5938,7 +5938,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-25T19:37:29+00:00"
+            "time": "2025-02-21T18:31:49+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
