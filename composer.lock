@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e79b1e08095e121ec59c0819122c6cb",
+    "content-hash": "7e94f71c71ec212b5e65c839f41a3a87",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3455,20 +3455,20 @@
         },
         {
             "name": "mhmiton/laravel-modules-livewire",
-            "version": "v4.3.0",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mhmiton/laravel-modules-livewire.git",
-                "reference": "05f65e316a99601e58278d4e7770864f90532d5e"
+                "reference": "4051a5849bb97cd97eb6f4f8e91298f8289115ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mhmiton/laravel-modules-livewire/zipball/05f65e316a99601e58278d4e7770864f90532d5e",
-                "reference": "05f65e316a99601e58278d4e7770864f90532d5e",
+                "url": "https://api.github.com/repos/mhmiton/laravel-modules-livewire/zipball/4051a5849bb97cd97eb6f4f8e91298f8289115ab",
+                "reference": "4051a5849bb97cd97eb6f4f8e91298f8289115ab",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^10.0|^11.0",
+                "laravel/framework": "^10.0|^11.0|^12.0",
                 "livewire/livewire": "^3.0",
                 "nwidart/laravel-modules": ">=11.0",
                 "php": ">=8.1"
@@ -3513,9 +3513,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mhmiton/laravel-modules-livewire/issues",
-                "source": "https://github.com/mhmiton/laravel-modules-livewire/tree/v4.3.0"
+                "source": "https://github.com/mhmiton/laravel-modules-livewire/tree/v5.0.0"
             },
-            "time": "2024-11-27T15:53:42+00:00"
+            "time": "2025-02-25T16:02:13+00:00"
         },
         {
             "name": "monolog/monolog",
