@@ -4025,16 +4025,16 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "v12.0.0",
+            "version": "v12.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "9d53ad7fbf161ddbf23be109ac77ad8962d83ead"
+                "reference": "e56a298ff63e29b040bbf302400b1015230d2401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/9d53ad7fbf161ddbf23be109ac77ad8962d83ead",
-                "reference": "9d53ad7fbf161ddbf23be109ac77ad8962d83ead",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/e56a298ff63e29b040bbf302400b1015230d2401",
+                "reference": "e56a298ff63e29b040bbf302400b1015230d2401",
                 "shasum": ""
             },
             "require": {
@@ -4050,8 +4050,8 @@
                 "laravel/pint": "^1.16",
                 "mockery/mockery": "^1.6",
                 "orchestra/testbench": "^v10.0",
-                "phpstan/phpstan": "^1.4",
-                "phpunit/phpunit": "^11.0",
+                "phpstan/phpstan": "^2.0",
+                "phpunit/phpunit": "^11.5.3|^12.0.",
                 "spatie/phpunit-snapshot-assertions": "^5.0"
             },
             "type": "library",
@@ -4065,7 +4065,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-master": "11.0-dev"
+                    "dev-master": "12.x-dev"
                 }
             },
             "autoload": {
@@ -4098,7 +4098,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nWidart/laravel-modules/issues",
-                "source": "https://github.com/nWidart/laravel-modules/tree/v12.0.0"
+                "source": "https://github.com/nWidart/laravel-modules/tree/v12.0.1"
             },
             "funding": [
                 {
@@ -4110,7 +4110,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-24T22:02:47+00:00"
+            "time": "2025-03-08T02:07:02+00:00"
         },
         {
             "name": "openspout/openspout",
