@@ -9636,30 +9636,30 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.1.0",
+            "version": "1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68"
+                "reference": "82a311fd3690fb2bf7b64d5c98f912b3dd746140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
-                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/82a311fd3690fb2bf7b64d5c98f912b3dd746140",
+                "reference": "82a311fd3690fb2bf7b64d5c98f912b3dd746140",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0"
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "doctrine/annotations": "^2.0",
-                "nikic/php-parser": "^5.3.0",
+                "nikic/php-parser": "^4.15",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
                 "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpstan/phpstan-strict-rules": "^2.0",
-                "phpunit/phpunit": "^9.6",
+                "phpstan/phpstan": "^1.5",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5",
                 "symfony/process": "^5.2"
             },
             "type": "library",
@@ -9677,9 +9677,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.1.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.33.0"
             },
-            "time": "2025-02-19T13:28:12+00:00"
+            "time": "2024-10-13T11:25:22+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -11085,22 +11085,22 @@
         },
         {
             "name": "stevebauman/autodoc-facades",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stevebauman/autodoc-facades.git",
-                "reference": "cff65bb30aa7af880b91931e753e563c958e9524"
+                "reference": "ed54b765685cdc1a6155ef8e16a5326c98e6abe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stevebauman/autodoc-facades/zipball/cff65bb30aa7af880b91931e753e563c958e9524",
-                "reference": "cff65bb30aa7af880b91931e753e563c958e9524",
+                "url": "https://api.github.com/repos/stevebauman/autodoc-facades/zipball/ed54b765685cdc1a6155ef8e16a5326c98e6abe9",
+                "reference": "ed54b765685cdc1a6155ef8e16a5326c98e6abe9",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
                 "php": "^8.1",
-                "phpstan/phpdoc-parser": "^1.0|^2.0"
+                "phpstan/phpdoc-parser": "^1.16"
             },
             "require-dev": {
                 "laravel/facade-documenter": "dev-main",
@@ -11146,7 +11146,7 @@
                 "issues": "https://github.com/stevebauman/autodoc-facades/issues",
                 "source": "https://github.com/stevebauman/autodoc-facades"
             },
-            "time": "2025-02-27T22:29:17+00:00"
+            "time": "2025-04-28T16:15:58+00:00"
         },
         {
             "name": "symfony/yaml",
