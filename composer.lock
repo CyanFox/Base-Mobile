@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4acdab400f73fa8395e31ae155946b2e",
+    "content-hash": "a0efc104c6501172cc1f8acbe219eeb5",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2194,16 +2194,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.44.2",
+            "version": "v11.44.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f85216c82cbd38b66d67ebd20ea762cb3751a4b4"
+                "reference": "00bc6ac91a6d577bf051c18ddaa638c0d221e1c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f85216c82cbd38b66d67ebd20ea762cb3751a4b4",
-                "reference": "f85216c82cbd38b66d67ebd20ea762cb3751a4b4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/00bc6ac91a6d577bf051c18ddaa638c0d221e1c7",
+                "reference": "00bc6ac91a6d577bf051c18ddaa638c0d221e1c7",
                 "shasum": ""
             },
             "require": {
@@ -2405,7 +2405,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-03-12T14:34:30+00:00"
+            "time": "2025-04-25T12:40:47+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -8819,16 +8819,16 @@
         },
         {
             "name": "wire-elements/modal",
-            "version": "2.0.13",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wire-elements/modal.git",
-                "reference": "65d9db80a0befaa38ae99a47a26818e784aa7101"
+                "reference": "4e955ca73f5913501d76ba05fe5f7cdaf4022946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wire-elements/modal/zipball/65d9db80a0befaa38ae99a47a26818e784aa7101",
-                "reference": "65d9db80a0befaa38ae99a47a26818e784aa7101",
+                "url": "https://api.github.com/repos/wire-elements/modal/zipball/4e955ca73f5913501d76ba05fe5f7cdaf4022946",
+                "reference": "4e955ca73f5913501d76ba05fe5f7cdaf4022946",
                 "shasum": ""
             },
             "require": {
@@ -8871,7 +8871,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wire-elements/modal/issues",
-                "source": "https://github.com/wire-elements/modal/tree/2.0.13"
+                "source": "https://github.com/wire-elements/modal/tree/3.0.1"
             },
             "funding": [
                 {
@@ -8879,7 +8879,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-20T13:07:12+00:00"
+            "time": "2025-03-23T05:09:13+00:00"
         }
     ],
     "packages-dev": [
