@@ -19,7 +19,7 @@
         "vite": "^6.3"
     },
     "dependencies": {
-        "bootstrap-icons": "^1.11.3",
+        "bootstrap-icons": "^1.12.1",
         "lucide-static": "^0.507.0"
     }
 }
