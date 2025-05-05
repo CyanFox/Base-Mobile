@@ -20,6 +20,6 @@
     },
     "dependencies": {
         "bootstrap-icons": "^1.11.3",
-        "lucide-static": "^0.503.0"
+        "lucide-static": "^0.507.0"
     }
 }
