@@ -1,29 +1,30 @@
 @props([
-    'current' => 20,
     'min' => 0,
     'max' => 100,
-    'showText' => false,
-    'color' => 'primary',
+    'label' => null,
+    'hint' => null,
+    'tooltip' => null,
 ])
 
+<div>
+    <div
+        x-data="{ minVal: {{ $min }}, maxVal: {{ $max }}, calcPercentage(min, max, val){return (((val-min)/(max-min))*100).toFixed(0)} }"
+        class="w-full">
+        @if($label)
+            <div class="mb-1 gap-2 text-on-surface dark:text-on-surface-dark">
+                <span>{{ $label }}</span>
+            </div>
+        @endif
 
-@inject('progressService', 'App\Services\PenguBlade\ProgressCvaService')
-
-<div
-    x-data="{ currentVal: {{ $current }}, minVal: {{ $min }}, maxVal: {{ $max }}, calcPercentage(min, max, val){return (((val-min)/(max-min))*100).toFixed(0)} }"
-    class="flex h-4 w-full overflow-hidden rounded-md bg-neutral-50 dark:bg-neutral-900" role="progressbar"
-    aria-label="default progress bar" :aria-valuenow="currentVal" :aria-valuemin="minVal" :aria-valuemax="maxVal">
-
-    @if($showText)
-        <div
-            {{ $attributes->twMerge('h-full rounded-md bg-black p-0.5 text-center text-xs font-semibold leading-none ' . $progressService::new()(['color' => $color])) }}
-            :style="`width: ${calcPercentage(minVal, maxVal, currentVal)}%`">
-            <span x-text="`${calcPercentage(minVal, maxVal, currentVal)}%`"></span>
+            <div @if($tooltip) x-tooltip.raw="{{ $tooltip }}" @endif
+            {{ $attributes->twMerge('flex h-2.5 w-full overflow-hidden rounded-radius bg-surface-alt dark:bg-surface-dark-alt') }}
+            role="progressbar" x-bind:aria-valuemin="minVal" x-bind:aria-valuemax="maxVal">
+            {{ $slot }}
         </div>
-    @else
-        <div
-            {{ $attributes->twMerge('flex h-2.5 w-full overflow-hidden rounded-md ' . $progressService::new()(['color' => $color])) }}
-            :style="`width: ${calcPercentage(minVal, maxVal, currentVal)}%`">
-        </div>
+    </div>
+
+
+    @if($hint)
+        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">{{ $hint }}</p>
     @endif
 </div>

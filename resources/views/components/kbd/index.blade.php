@@ -1,3 +1,20 @@
-<kbd {{ $attributes->twMerge('inline-block size-min whitespace-nowrap rounded-md bg-neutral-50 px-2 py-1 font-mono text-xs font-semibold text-neutral-600 dark:bg-neutral-900 dark:text-neutral-300') }}>
+@props([
+    'size' => 'sm',
+    'tooltip' => null,
+])
+
+<?php
+
+$sizeClass = match ($size) {
+    'xs' => 'text-xs',
+    'md' => 'text-base',
+    'lg' => 'text-lg',
+    default => 'text-sm',
+};
+
+?>
+
+<kbd @if($tooltip) x-data x-tooltip.raw="{{ $tooltip }}" @endif
+    {{ $attributes->twMerge('inline-block size-min whitespace-nowrap rounded-md border border-outline bg-surface-alt px-2 py-1 font-mono font-semibold text-on-surface dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark ' . $sizeClass) }}>
     {{ $slot }}
 </kbd>

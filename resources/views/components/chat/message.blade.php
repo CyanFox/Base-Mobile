@@ -1,34 +1,67 @@
 @props([
     'type' => 'sent',
+    'typing' => false,
     'footer' => null,
+    'title' => null,
     'avatar' => null,
+    'tooltip' => null,
 ])
 
 @if($type == 'sent')
     @if($avatar)
         <div class="flex items-end gap-2">
-            @endif
-            <div {{ $attributes->twMerge('ml-auto flex max-w-[80%] flex-col gap-2 rounded-l-xl rounded-tr-xl bg-black p-4 text-sm text-neutral-100 md:max-w-[60%] dark:bg-white dark:text-black') }}>
+            <div
+                class="ml-auto flex max-w-[70%] flex-col gap-2 rounded-l-radius rounded-tr-radius bg-primary p-4 text-sm text-on-primary md:max-w-[60%] dark:bg-primary-dark dark:text-on-primary-dark"
+                @if($tooltip) x-data x-tooltip.raw="{{ $tooltip }}" @endif>
                 {{ $slot }}
-
-                <span class="ml-auto text-xs">{{ $footer }}</span>
+                @if($footer)
+                    <span class="ml-auto text-xs">{{ $footer }}</span>
+                @endif
             </div>
-            @if($avatar)
-                <img class="size-8 rounded-full object-cover" src="{{ $avatar }}" alt="avatar"/>
+            {{ $avatar }}
+        </div>
+    @else
+        <div
+            class="ml-auto flex max-w-[80%] flex-col gap-2 rounded-l-radius rounded-tr-radius bg-primary p-4 text-sm text-on-primary md:max-w-[60%] dark:bg-primary-dark dark:text-on-primary-dark"
+            @if($tooltip) x-data x-tooltip.raw="{{ $tooltip }}" @endif>
+            {{ $slot }}
+            @if($footer)
+                <span class="ml-auto text-xs">{{ $footer }}</span>
+            @endif
         </div>
     @endif
 @elseif($type == 'received')
     @if($avatar)
         <div class="flex items-end gap-2">
-            <img class="size-8 rounded-full object-cover" src="{{ $avatar }}" alt="avatar"/>
-            @endif
-            <div {{ $attributes->twMerge('mr-auto flex max-w-[80%] flex-col gap-2 rounded-r-md rounded-tl-md bg-neutral-50 p-4 text-neutral-900 md:max-w-[60%] dark:bg-neutral-900 dark:text-white') }}>
-                <div class="text-sm text-neutral-600 dark:text-neutral-300">
+            {{ $avatar }}
+            <div
+                class="mr-auto flex max-w-[70%] flex-col gap-2 rounded-r-radius rounded-tl-radius bg-surface-alt p-4 text-on-surface md:max-w-[60%] dark:bg-surface-dark-alt dark:text-on-surface-dark"
+                @if($tooltip) x-data x-tooltip.raw="{{ $tooltip }}" @endif>
+                @if($title)
+                    <span
+                        class="font-semibold text-on-surface-strong dark:text-on-surface-dark-strong">{{ $title }}</span>
+                @endif
+                <div class="text-sm">
                     {{ $slot }}
                 </div>
-                <span class="ml-auto text-xs">{{ $footer }}</span>
+                @if($footer)
+                    <span class="ml-auto text-xs">{{ $footer }}</span>
+                @endif
             </div>
-            @if($avatar)
+        </div>
+    @else
+        <div
+            class="mr-auto flex max-w-[80%] flex-col gap-2 rounded-r-radius rounded-tl-radius bg-surface-alt p-4 md:max-w-[60%] dark:bg-surface-dark-alt">
+            @if($title)
+                <span class="font-semibold text-on-surface-strong dark:text-on-surface-dark-strong">{{ $title }}</span>
+            @endif
+                <div class="text-sm text-on-surface dark:text-on-surface-dark" @if($tooltip) x-data
+                     x-tooltip.raw="{{ $tooltip }}" @endif>
+                {{ $slot }}
+            </div>
+            @if($footer)
+                <span class="ml-auto text-xs">{{ $footer }}</span>
+            @endif
         </div>
     @endif
 @endif

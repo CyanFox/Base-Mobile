@@ -28,7 +28,7 @@
 
                 <div x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity"
                      x-transition:enter-start="opacity-0 scale-50" x-transition:enter-end="opacity-100 scale-100"
-                     class="flex max-w-lg z-40 flex-col gap-4 overflow-hidden rounded-md bg-white text-neutral-600 dark:bg-neutral-900 dark:text-neutral-300">
+                     class="flex z-40 flex-col gap-4 overflow-hidden rounded-md bg-white text-neutral-600 dark:bg-neutral-900 dark:text-neutral-300">
 
                     <div
                         x-show="show && showActiveComponent"

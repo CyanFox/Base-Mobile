@@ -42,65 +42,62 @@
         ])
     "
     x-init="
-        (() => {
-            let animationStartTime = Date.now();
-            let hoverStartTime;
-            let initialDelay = 50;
-            const totalDuration = {{ $duration }};
-            const speedAdjustment = 210;
+    (() => {
+        const totalDuration = {{ $duration }};
+        let animationStartTime = Date.now();
+        let remainingDuration = totalDuration;
+        let isHovered = false;
 
-            const startProgress = (remainingWidth) => {
-                const currentTime = Date.now();
-                const elapsedWithoutHover = currentTime - animationStartTime;
-                const remainingDuration = totalDuration - elapsedWithoutHover;
+        const startProgress = () => {
+            $refs.progressBar.style.transition = `width ${remainingDuration}ms linear`;
+            $refs.progressBar.style.width = '0%';
+            animationStartTime = Date.now();
+        };
 
-                if (remainingDuration <= 0) return;
+        const pauseProgress = () => {
+            const currentWidth = $refs.progressBar.getBoundingClientRect().width;
+            const containerWidth = $refs.progressContainer.getBoundingClientRect().width;
+            const widthPercentage = (currentWidth / containerWidth) * 100;
 
-                // Berechne die neue schnellere Duration basierend auf dem verbleibenden Fortschritt
-                const speedUpFactor = remainingWidth / 100;
-                const newDuration = Math.max(0, (remainingDuration * speedUpFactor) + speedAdjustment);
+            $refs.progressBar.style.transition = 'none';
+            $refs.progressBar.style.width = `${widthPercentage}%`;
+        };
 
-                $refs.progressBar.style.transition = `width ${newDuration}ms linear`;
-                $refs.progressBar.style.width = '0%';
-            };
+        const resumeProgress = () => {
+            const elapsedTime = Date.now() - animationStartTime;
+            remainingDuration = totalDuration - elapsedTime;
 
-            const pauseProgress = () => {
-                hoverStartTime = Date.now();
-
-                // Aktuelle Breite der Progressbar speichern
-                const currentWidth = $refs.progressBar.getBoundingClientRect().width;
-                const containerWidth = $refs.progressContainer.getBoundingClientRect().width;
-                const widthPercentage = (currentWidth / containerWidth) * 100;
-
-                $refs.progressBar.style.transition = 'none';
-                $refs.progressBar.style.width = `${widthPercentage}%`;
-
-                return widthPercentage;
-            };
-
-            // Initial setup
-            $refs.progressBar.style.width = '100%';
-
-            setTimeout(() => {
-                // Starte die initiale Animation
-                $refs.progressBar.style.transition = `width ${totalDuration}ms linear`;
+            if (remainingDuration > 0) {
+                $refs.progressBar.style.transition = `width ${remainingDuration}ms linear`;
                 $refs.progressBar.style.width = '0%';
                 animationStartTime = Date.now();
+            } else {
+                close();
+            }
+        };
 
-                $el.addEventListener('mouseenter', () => {
-                    pauseProgress();
-                });
+        $refs.progressBar.style.width = '100%';
+        setTimeout(() => {
+            startProgress();
+        }, 10);
 
-                $el.addEventListener('mouseleave', () => {
-                    if (hoverStartTime) {
-                        const currentWidth = pauseProgress();
-                        startProgress(currentWidth);
-                        hoverStartTime = null;
-                    }
-                });
-            }, initialDelay);
-        })()
-    "
+        $el.addEventListener('mouseenter', () => {
+            isHovered = true;
+            pauseProgress();
+        });
+
+        $el.addEventListener('mouseleave', () => {
+            isHovered = false;
+            resumeProgress();
+        });
+
+        setTimeout(() => {
+            if (!isHovered) {
+                close();
+            }
+        }, totalDuration);
+    })()
+"
     @class([
         'fi-no-notification w-full overflow-hidden transition duration-300 relative',
         ...match ($isInline) {
@@ -126,7 +123,6 @@
         ) => ! ($isInline || $color === 'gray'),
     ])
 >
-    <!-- Rest des Templates bleibt unverändert -->
     <div
         @class([
             'flex w-full gap-3 p-4',

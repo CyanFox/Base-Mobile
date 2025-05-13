@@ -1,13 +1,18 @@
 @props([
-    'dividerIcon' => 'icon-chevron-right',
-    'isLast' => false,
+    'last' => false,
+    'separator' => '>',
+    'tooltip' => null,
 ])
 
-<li class="flex items-center gap-1">
-    <a {{ $attributes->twMerge('hover:text-neutral-900 dark:hover:text-white') }}>
+@if($last)
+    <li {{ $attributes->twMerge('flex items-center text-on-surface-strong gap-1 font-bold dark:text-on-surface-dark-strong') }} @if($tooltip) x-data
+        x-tooltip.raw="{{ $tooltip }}" @endif
+        aria-current="page">
         {{ $slot }}
-    </a>
-    @if(!$isLast)
-        <i class="{{ $dividerIcon }}"></i>
-    @endif
-</li>
+    </li>
+@else
+    <li class="flex items-center gap-1" @if($tooltip) x-data x-tooltip.raw="{{ $tooltip }}" @endif>
+        <a {{ $attributes->twMerge('hover:text-on-surface-strong dark:hover:text-on-surface-dark-strong') }}>{{ $slot }}</a>
+        {{ $separator }}
+    </li>
+@endif
