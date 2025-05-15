@@ -1,14 +1,17 @@
 import { defineConfig } from 'vite';
 import laravel, { refreshPaths } from 'laravel-vite-plugin';
 import path from 'path';
+import collectModuleAssetsPaths from "./vite-module-loader.js";
+const allPaths = await collectModuleAssetsPaths(['resources/js/app.js', 'resources/css/app.css'], 'modules');
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: allPaths,
             refresh: [
                 ...refreshPaths,
                 'app/Livewire/**',
+                'modules/**',
             ],
         }),
     ],

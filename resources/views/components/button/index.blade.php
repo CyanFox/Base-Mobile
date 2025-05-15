@@ -21,7 +21,7 @@
         }
     }
 
-    $baseClass = 'whitespace-nowrap mb-0 cursor-pointer border rounded-radius text-sm font-medium tracking-wide transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed';
+    $baseClass = 'inline-flex items-center justify-center whitespace-nowrap mb-0 cursor-pointer border rounded-radius text-sm font-medium tracking-wide transition hover:opacity-75 text-center focus-visible:outline-2 focus-visible:outline-offset-2 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed box-border leading-none m-0 p-0';
 
     $sizeClass = match($size) {
         'sm' => 'px-2 py-1 text-xs',
@@ -99,7 +99,7 @@
         @if($loading)
             <svg wire:loading wire:target="{{ loadingTarget($attributes, $loading) }}"
                  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                 class="{{ $spinnerClass }} size-5 animate-spin motion-reduce:animate-none">
+                 class="{{ $spinnerClass }} size-5 animate-spin motion-reduce:animate-none @if(!$hideTextWhileLoading) mr-1 @endif">
                 <path opacity="0.25"
                       d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
                 <path
