@@ -1,3 +1,3 @@
-<tbody {{ $attributes->twMerge('divide-y divide-neutral-300 dark:divide-neutral-700') }}>
+<tbody {{ $attributes->twMerge('divide-y divide-outline dark:divide-outline-dark') }}>
 {{ $slot }}
 </tbody>

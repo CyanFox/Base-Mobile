@@ -2,16 +2,21 @@
     'position' => 'bottom',
 ])
 
+<?php
+
+$positionClass = match ($position) {
+    'top' => 'bottom-11',
+    'bottom' => 'top-11 left-0',
+    'left' => 'right-full mr-1 top-0 flex',
+    'right' => 'left-full ml-1 top-0',
+};
+
+?>
+
 <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard"
-     @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()"
-     @keydown.up.prevent="$focus.wrap().previous()"
-     {{ $attributes->twMerge([
-        'class' => 'absolute top-11 left-0 flex w-full min-w-[12rem] flex-col overflow-hidden rounded-md border border-neutral-300 bg-neutral-50 py-1.5 dark:border-neutral-700 dark:bg-neutral-900 ' .
-                   ($position === 'top' ? 'absolute bottom-11' : '') .
-                   ($position === 'bottom' ? 'absolute top-11 left-0' : '') .
-                   ($position === 'left' ? 'absolute right-full mr-1 top-0' : '') .
-                   ($position === 'right' ? 'absolute left-full ml-1 top-0' : '')
-    ]) }}
+     x-on:click.outside="isOpen = false, openedWithKeyboard = false" x-on:keydown.down.prevent="$focus.wrap().next()"
+     x-on:keydown.up.prevent="$focus.wrap().previous()"
+     {{ $attributes->twMerge('absolute flex w-fit min-w-48 flex-col overflow-hidden rounded-radius border border-outline bg-surface-alt dark:border-outline-dark dark:bg-surface-dark-alt ' . $positionClass) }}
      role="menu">
     {{ $slot }}
 </div>

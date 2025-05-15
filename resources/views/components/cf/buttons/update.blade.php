@@ -8,7 +8,7 @@
 ])
 <x-divider/>
 
-<div {{ $attributes->merge(['class' => 'flex sm:flex-row flex-col sm:space-x-2 sm:space-y-0 space-y-2 mt-4']) }}>
+<div {{ $attributes->merge(['class' => 'flex sm:flex-row flex-col sm:w-fit w-full gap-2']) }}>
     @if ($showUpdate)
         <x-button loading="{{ $target }}"
                   type="submit">{{ $updateText }}</x-button>

@@ -1,3 +1,4 @@
-<thead class=" border-b border-neutral-300 bg-neutral-50 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white">
+<thead
+    {{ $attributes->twMerge('border-b border-outline bg-surface-alt text-sm text-on-surface-strong dark:border-outline-dark dark:bg-surface-dark-alt dark:text-on-surface-dark-strong') }}>
 {{ $slot }}
 </thead>

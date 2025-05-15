@@ -1,7 +1,7 @@
 @props([
-    'uuid' => 'pengublade-accordion-item-' . str()->uuid(),
+    'uuid' => str()->uuid(),
 ])
 
-<div x-data="{ uuid: Math.random().toString(20).substring(2, 20) }" {{ $attributes->twMerge('') }}>
+<div x-data="{ uuid: '{{ $uuid }}' ? '{{ $uuid }}' : @entangle($attributes->wire('model')) }" {{ $attributes }}>
     {{ $slot }}
 </div>

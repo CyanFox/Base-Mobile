@@ -7,5 +7,5 @@
 </div>
 
 @if($divider)
-<x-divider/>
+    <x-divider/>
 @endif
