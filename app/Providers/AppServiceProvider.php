@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
             'settings.notifications.vertical_alignment' => settings('internal.app.notifications.vertical_alignment', config('settings.notifications.vertical_alignment')),
         ];
 
-        if (!config('settings.disable_db_settings') && config('app.env') !== 'testing') {
+        if (! config('settings.disable_db_settings') && config('app.env') !== 'testing') {
             foreach ($configValues as $key => $value) {
                 Config::set($key, $value);
             }
