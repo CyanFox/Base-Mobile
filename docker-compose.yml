@@ -26,6 +26,11 @@ services:
             - sail
         depends_on:
             - mariadb
+        deploy:
+            resources:
+                limits:
+                    cpus: 1
+                    memory: 2G
     mariadb:
         image: 'mariadb:11'
         ports:
