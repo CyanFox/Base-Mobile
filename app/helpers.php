@@ -37,6 +37,6 @@ if (! function_exists('formatFileSize')) {
         $power = $bytes > 0 ? floor(log($bytes, 1024)) : 0;
         $size = round($bytes / pow(1024, $power), 2);
 
-        return $size . ' ' . $units[$power];
+        return $size.' '.$units[$power];
     }
 }
