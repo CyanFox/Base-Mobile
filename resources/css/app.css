@@ -63,37 +63,3 @@
         border-color: var(--color-gray-200, currentColor);
     }
 }
-
-/* PowerGrid Tables */
-#pg-footer {
-    @apply dark:bg-neutral-900!;
-    @apply bg-white!;
-}
-
-#pg-header-export button {
-    @apply dark:bg-neutral-900!;
-    @apply dark:ring-neutral-700!;
-    @apply bg-white!;
-}
-
-#pg-header-export div {
-    @apply dark:bg-neutral-900!;
-    @apply bg-white!;
-    @apply dark:ring-neutral-700!;
-}
-
-[aria-label="Pagination Navigation"] div a {
-    @apply dark:bg-neutral-900!;
-    @apply bg-white!;
-}
-
-[aria-label="Pagination Navigation"] div span {
-    @apply dark:bg-neutral-800!;
-    @apply bg-white!;
-    @apply rounded-xs!;
-}
-
-[aria-label="Pagination Navigation"] {
-    @apply border border-white rounded-md!;
-    @apply dark:border-neutral-700!;
-}
