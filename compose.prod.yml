@@ -1,0 +1,24 @@
+services:
+  base:
+    container_name: ctr-base
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    #ports:
+    #    - "8080:80"
+    networks:
+      base:
+        ipv4_address: 10.100.0.2
+
+
+networks:
+  base:
+    name: net-base
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.0.0/24
+          gateway: 10.100.0.1

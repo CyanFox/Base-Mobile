@@ -16,9 +16,9 @@ trait WithCustomLivewireException
         }
 
         if ($e instanceof Exception) {
-            $this->log($e->getMessage(), 'error');
+            $this->log($e->getMessage(), 'error'); // @phpstan-ignore-line
         } else {
-            $this->log($e, 'error');
+            $this->log($e, 'error'); // @phpstan-ignore-line
         }
 
         if (! $e instanceof ValidationException) {

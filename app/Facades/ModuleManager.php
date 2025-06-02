@@ -4,9 +4,10 @@ namespace App\Facades;
 
 use App\Services\ModuleService;
 use Illuminate\Support\Facades\Facade;
+use Nwidart\Modules\Module;
 
 /**
- * @method static void getModule(void $module)
+ * @method static Module getModule(void $module)
  * @method static array|null getRequirements(string $module)
  * @method static bool checkRequirements(string $module)
  * @method static string|null getVersion(string $module)

@@ -1,8 +1,6 @@
 name: Build Docker Image
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 1 * *"
   push:
     branches:
       - v4
@@ -25,7 +23,7 @@ jobs:
       - uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile.image
+          file: ./Dockerfile
           platforms: linux/amd64, linux/arm64
           push: true
           tags: |

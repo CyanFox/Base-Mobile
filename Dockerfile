@@ -1,0 +1,65 @@
+FROM php:8.3-fpm-alpine
+
+# Install Dockerize
+ARG DOCKERIZE_VERSION=0.8.0
+
+# Use the build argument to dynamically determine the architecture
+RUN set -eux; \
+    ARCH=$(uname -m); \
+    if [ "$ARCH" = "x86_64" ]; then ARCH="amd64"; fi; \
+    if [ "$ARCH" = "aarch64" ]; then ARCH="arm64"; fi; \
+    wget https://github.com/jwilder/dockerize/releases/download/v$DOCKERIZE_VERSION/dockerize-linux-$ARCH-v$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-$ARCH-v$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-$ARCH-v$DOCKERIZE_VERSION.tar.gz
+
+# Install packages
+RUN apk --no-cache add --virtual .build-deps \
+    libzip-dev \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    && apk --no-cache add \
+    php-opcache \
+    php-pdo_mysql \
+    php-pdo_pgsql \
+    php-pgsql \
+    php-pcntl \
+    php-exif \
+    php-intl \
+    php-openssl \
+    php-pecl-apcu \
+    php-pecl-redis \
+    php-common \
+    php-iconv \
+    php-json \
+    php-mbstring \
+    php-xml \
+    php-bcmath \
+    php-curl \
+    php-ctype \
+    php-dom \
+    php-tokenizer \
+    php-fileinfo \
+    php-xmlwriter \
+    php-xmlreader \
+    php-simplexml \
+    php-gd \
+    php-zip \
+    composer \
+    nodejs \
+    npm \
+    caddy \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd pdo_mysql zip \
+    && apk del .build-deps
+
+COPY docker/Caddyfile /etc/caddy/Caddyfile
+
+WORKDIR /app
+
+RUN chown -R www-data:www-data /app
+
+COPY docker/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

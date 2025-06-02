@@ -7,7 +7,7 @@
 <h3 align="center">CyanFox-Base</h3>
 
   <p align="center">
-    A modular extendable Base System based on Laravel 11
+    A modular extendable Base System based on Laravel 12
     <br />
     <a href="https://github.com/CyanFox-Labs/CyanFox-Base/wiki"><strong>📖 Explore the docs »</strong></a>
     <br />
