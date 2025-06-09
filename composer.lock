@@ -224,16 +224,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.12.3",
+            "version": "0.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "866551da34e9a618e64a819ee1e01c20d8a588ba"
+                "reference": "fc7ed316430118cc7836bf45faff18d5dfc8de04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/866551da34e9a618e64a819ee1e01c20d8a588ba",
-                "reference": "866551da34e9a618e64a819ee1e01c20d8a588ba",
+                "url": "https://api.github.com/repos/brick/math/zipball/fc7ed316430118cc7836bf45faff18d5dfc8de04",
+                "reference": "fc7ed316430118cc7836bf45faff18d5dfc8de04",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.12.3"
+                "source": "https://github.com/brick/math/tree/0.13.1"
             },
             "funding": [
                 {
@@ -280,7 +280,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-28T13:11:00+00:00"
+            "time": "2025-03-29T13:50:30+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -2210,20 +2210,20 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.16.0",
+            "version": "v12.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "293bb1c70224faebfd3d4328e201c37115da055f"
+                "reference": "8729d084510480fdeec9b6ad198180147d4a7f06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/293bb1c70224faebfd3d4328e201c37115da055f",
-                "reference": "293bb1c70224faebfd3d4328e201c37115da055f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8729d084510480fdeec9b6ad198180147d4a7f06",
+                "reference": "8729d084510480fdeec9b6ad198180147d4a7f06",
                 "shasum": ""
             },
             "require": {
-                "brick/math": "^0.11|^0.12",
+                "brick/math": "^0.11|^0.12|^0.13",
                 "composer-runtime-api": "^2.2",
                 "doctrine/inflector": "^2.0.5",
                 "dragonmantank/cron-expression": "^3.4",
@@ -2421,7 +2421,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-05-27T15:49:44+00:00"
+            "time": "2025-06-03T14:04:18+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -3998,16 +3998,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.6",
+            "version": "v4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "ce708655043c7050eb050df361c5e313cf708309"
+                "reference": "e67c4061eb40b9c113b218214e42cb5a0dda28f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/ce708655043c7050eb050df361c5e313cf708309",
-                "reference": "ce708655043c7050eb050df361c5e313cf708309",
+                "url": "https://api.github.com/repos/nette/utils/zipball/e67c4061eb40b9c113b218214e42cb5a0dda28f2",
+                "reference": "e67c4061eb40b9c113b218214e42cb5a0dda28f2",
                 "shasum": ""
             },
             "require": {
@@ -4078,9 +4078,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.6"
+                "source": "https://github.com/nette/utils/tree/v4.0.7"
             },
-            "time": "2025-03-30T21:06:30+00:00"
+            "time": "2025-06-03T04:55:08+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -9635,16 +9635,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.43.0",
+            "version": "v1.43.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "71a509b14b2621ce58574274a74290f933c687f7"
+                "reference": "3e7d899232a8c5e3ea4fc6dee7525ad583887e72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/71a509b14b2621ce58574274a74290f933c687f7",
-                "reference": "71a509b14b2621ce58574274a74290f933c687f7",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/3e7d899232a8c5e3ea4fc6dee7525ad583887e72",
+                "reference": "3e7d899232a8c5e3ea4fc6dee7525ad583887e72",
                 "shasum": ""
             },
             "require": {
@@ -9694,7 +9694,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2025-05-13T13:34:34+00:00"
+            "time": "2025-05-19T13:19:21+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -11638,16 +11638,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.2.6",
+            "version": "v7.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "0feafffb843860624ddfd13478f481f4c3cd8b23"
+                "reference": "cea40a48279d58dc3efee8112634cb90141156c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/0feafffb843860624ddfd13478f481f4c3cd8b23",
-                "reference": "0feafffb843860624ddfd13478f481f4c3cd8b23",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/cea40a48279d58dc3efee8112634cb90141156c2",
+                "reference": "cea40a48279d58dc3efee8112634cb90141156c2",
                 "shasum": ""
             },
             "require": {
@@ -11690,7 +11690,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.2.6"
+                "source": "https://github.com/symfony/yaml/tree/v7.3.0"
             },
             "funding": [
                 {
@@ -11706,7 +11706,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-04T10:10:11+00:00"
+            "time": "2025-04-04T10:10:33+00:00"
         },
         {
             "name": "theseer/tokenizer",
