@@ -4084,16 +4084,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.4.0",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
+                "reference": "ae59794362fe85e051a58ad36b289443f57be7a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ae59794362fe85e051a58ad36b289443f57be7a9",
+                "reference": "ae59794362fe85e051a58ad36b289443f57be7a9",
                 "shasum": ""
             },
             "require": {
@@ -4136,9 +4136,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.5.0"
             },
-            "time": "2024-12-30T11:07:19+00:00"
+            "time": "2025-05-31T08:24:38+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -4502,16 +4502,16 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "4.2.0",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "5f6d7410e5fd72cac1aa67d4f05f4fe664d01ba6"
+                "reference": "d0ac70d610fb62ccad38c2696569ae1ad42acc70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/5f6d7410e5fd72cac1aa67d4f05f4fe664d01ba6",
-                "reference": "5f6d7410e5fd72cac1aa67d4f05f4fe664d01ba6",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/d0ac70d610fb62ccad38c2696569ae1ad42acc70",
+                "reference": "d0ac70d610fb62ccad38c2696569ae1ad42acc70",
                 "shasum": ""
             },
             "require": {
@@ -4602,9 +4602,9 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/4.2.0"
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/4.3.1"
             },
-            "time": "2025-04-17T02:41:45+00:00"
+            "time": "2025-05-26T18:51:08+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -6145,16 +6145,16 @@
         },
         {
             "name": "realzone22/pengutables",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RealZone22/PenguTables.git",
-                "reference": "8c85da64e2382a54037738d368dcd70a0b5eaf2b"
+                "reference": "5b3e44ebefce9a80b58656153496b025c615536f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RealZone22/PenguTables/zipball/8c85da64e2382a54037738d368dcd70a0b5eaf2b",
-                "reference": "8c85da64e2382a54037738d368dcd70a0b5eaf2b",
+                "url": "https://api.github.com/repos/RealZone22/PenguTables/zipball/5b3e44ebefce9a80b58656153496b025c615536f",
+                "reference": "5b3e44ebefce9a80b58656153496b025c615536f",
                 "shasum": ""
             },
             "require": {
@@ -6210,7 +6210,7 @@
             ],
             "support": {
                 "issues": "https://github.com/RealZone22/PenguTables/issues",
-                "source": "https://github.com/RealZone22/PenguTables/tree/1.0.0"
+                "source": "https://github.com/RealZone22/PenguTables/tree/1.0.2"
             },
             "funding": [
                 {
@@ -6218,7 +6218,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-20T15:38:17+00:00"
+            "time": "2025-05-27T19:34:01+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
