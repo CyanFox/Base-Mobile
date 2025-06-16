@@ -19,7 +19,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "mhmiton/laravel-modules-livewire": "^5.0",
-        "nwidart/laravel-modules": "^11.1",
+        "nwidart/laravel-modules": "^12.0",
         "realzone22/pengutables": "^1.0",
         "pusher/pusher-php-server": "^7.2",
         "realzone22/pengublade": "^1.0",
