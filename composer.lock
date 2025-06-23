@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b29f11c2b6ec4b2baba2b3ecb71b0056",
+    "content-hash": "5fd16d4b6866cea97d6fbf859f5f2d90",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -9109,16 +9109,16 @@
         },
         {
             "name": "wire-elements/modal",
-            "version": "2.0.13",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wire-elements/modal.git",
-                "reference": "65d9db80a0befaa38ae99a47a26818e784aa7101"
+                "reference": "cf7eb0ec35d27807ed6380efe9f949c6aa9351f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wire-elements/modal/zipball/65d9db80a0befaa38ae99a47a26818e784aa7101",
-                "reference": "65d9db80a0befaa38ae99a47a26818e784aa7101",
+                "url": "https://api.github.com/repos/wire-elements/modal/zipball/cf7eb0ec35d27807ed6380efe9f949c6aa9351f8",
+                "reference": "cf7eb0ec35d27807ed6380efe9f949c6aa9351f8",
                 "shasum": ""
             },
             "require": {
@@ -9161,7 +9161,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wire-elements/modal/issues",
-                "source": "https://github.com/wire-elements/modal/tree/2.0.13"
+                "source": "https://github.com/wire-elements/modal/tree/3.0.2"
             },
             "funding": [
                 {
@@ -9169,7 +9169,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-20T13:07:12+00:00"
+            "time": "2025-06-20T14:12:38+00:00"
         }
     ],
     "packages-dev": [
