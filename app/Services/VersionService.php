@@ -59,8 +59,7 @@ class VersionService
         $currentVersion = self::getCurrentBaseVersion();
         $remoteVersion = self::getRemoteBaseVersion();
 
-        if ($currentVersion === null || $remoteVersion === null
-            || $currentVersion === 'N/A' || $remoteVersion === 'N/A') {
+        if ($currentVersion === 'N/A' || $remoteVersion === 'N/A') {
             return true;
         }
 
