@@ -11,7 +11,7 @@ return [
     | Configure here the theme of your choice.
     */
 
-    'theme' => \App\Themes\PowerGridTheme::class,
+    'theme' => App\Themes\PowerGridTheme::class,
     // 'theme' => \PowerComponents\LivewirePowerGrid\Themes\Bootstrap5::class,
 
     'cache_ttl' => null,
@@ -120,8 +120,8 @@ return [
     'exportable' => [
         'default' => 'openspout_v4',
         'openspout_v4' => [
-            'xlsx' => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToXLS::class,
-            'csv' => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToCsv::class,
+            'xlsx' => PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToXLS::class,
+            'csv' => PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToCsv::class,
         ],
     ],
 

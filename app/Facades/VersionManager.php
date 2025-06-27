@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static string getRemoteBaseVersion()
  * @method static bool isBaseUpToDate()
  *
- * @see \App\Services\VersionService
+ * @see VersionService
  */
 class VersionManager extends Facade
 {

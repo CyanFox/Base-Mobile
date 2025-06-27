@@ -13,13 +13,6 @@ class Setting extends Model
         'is_locked',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'is_locked' => 'boolean',
-        ];
-    }
-
     protected static function boot()
     {
         parent::boot();
@@ -36,5 +29,12 @@ class Setting extends Model
 
             return true;
         });
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'is_locked' => 'boolean',
+        ];
     }
 }

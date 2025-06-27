@@ -25,7 +25,7 @@ class ViewIntegrationService
     public function get(?string $name = null)
     {
         $integrations = $this->integrations;
-        if ($name != null) {
+        if ($name !== null) {
             if (! isset($this->menu[$name])) {
                 return null;
             }
