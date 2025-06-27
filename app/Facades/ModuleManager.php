@@ -21,7 +21,7 @@ use Nwidart\Modules\Module;
  * @method static bool installModule(string $path)
  * @method static bool installModuleFromURL(string $url)
  *
- * @see \App\Services\ModuleService
+ * @see ModuleService
  */
 class ModuleManager extends Facade
 {

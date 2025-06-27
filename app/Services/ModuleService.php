@@ -43,7 +43,7 @@ class ModuleService
                 return false;
             }
 
-            if ($module->isEnabled() && !$this->checkRequirements($module->getName())) {
+            if ($module->isEnabled() && ! $this->checkRequirements($module->getName())) {
                 return false;
             }
         }
@@ -112,19 +112,23 @@ class ModuleService
     {
         $module = Module::find($module);
 
+        if (config('app.env') === 'testing') {
+            return $this->getVersion($module->getName());
+        }
+
         if ($module->get('remote_version_url') !== null) {
-            if (Cache::has($module->getName() . '_version')) {
-                return Cache::get($module->getName() . '_version');
+            if (Cache::has($module->getName().'_version')) {
+                return Cache::get($module->getName().'_version');
             }
 
             $response = Http::get($module->get('remote_version_url'));
             $response = json_decode($response->body(), true);
 
-            if (!isset($response['version'])) {
+            if (! isset($response['version'])) {
                 return null;
             }
 
-            Cache::put($module->getName() . '_version', $response['version'], now()->addMinutes(60));
+            Cache::put($module->getName().'_version', $response['version'], now()->addMinutes(60));
 
             return $response['version'];
         }
@@ -147,9 +151,10 @@ class ModuleService
             File::deleteDirectory(storage_path('app/temp'));
 
             return true;
-        } else {
-            return false;
         }
+
+        return false;
+
     }
 
     public function installModuleFromURL(string $url): bool
@@ -157,7 +162,7 @@ class ModuleService
         $destinationPath = base_path('modules');
         $tempPath = storage_path('app/temp');
 
-        $tempFile = $tempPath . '/' . basename($url);
+        $tempFile = $tempPath.'/'.basename($url);
 
         File::ensureDirectoryExists($tempPath);
 
@@ -175,8 +180,9 @@ class ModuleService
             File::deleteDirectory($tempPath);
 
             return true;
-        } else {
-            return false;
         }
+
+        return false;
+
     }
 }

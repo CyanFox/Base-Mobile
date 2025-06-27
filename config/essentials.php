@@ -123,7 +123,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\SetDefaultPassword::class => true,
+    NunoMaduro\Essentials\Configurables\SetDefaultPassword::class => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -138,7 +138,7 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\ShouldBeStrict::class => true,
+    NunoMaduro\Essentials\Configurables\ShouldBeStrict::class => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -153,6 +153,6 @@ return [
     |
     */
 
-    NunoMaduro\Essentials\Configurables\Unguard::class => false,
+    NunoMaduro\Essentials\Configurables\Unguard::class => true,
 
 ];

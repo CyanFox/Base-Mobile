@@ -36,7 +36,7 @@ class VersionService
 
     public function getRemoteBaseVersion(): string
     {
-        if (settings('internal.versions.base_url', config('settings.base_url')) == null) {
+        if (settings('internal.versions.base_url', config('settings.base_url')) === null) {
             return 'N/A';
         }
 
@@ -44,7 +44,7 @@ class VersionService
             $url = settings('internal.versions.base_url', config('settings.base_url'));
             $data = json_decode(file_get_contents($url), true);
 
-            if ($data['base'] == null) {
+            if ($data['base'] === null) {
                 return 'N/A';
             }
 
@@ -59,11 +59,11 @@ class VersionService
         $currentVersion = self::getCurrentBaseVersion();
         $remoteVersion = self::getRemoteBaseVersion();
 
-        if ($currentVersion == null || $remoteVersion == null
-            || $currentVersion == 'N/A' || $remoteVersion == 'N/A') {
+        if ($currentVersion === null || $remoteVersion === null
+            || $currentVersion === 'N/A' || $remoteVersion === 'N/A') {
             return true;
         }
 
-        return $currentVersion == $remoteVersion;
+        return $currentVersion === $remoteVersion;
     }
 }

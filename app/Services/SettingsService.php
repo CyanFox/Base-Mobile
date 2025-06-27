@@ -14,7 +14,7 @@ class SettingsService
         try {
             $setting = Setting::where('key', $key)->first();
 
-            if ($setting == null) {
+            if ($setting === null) {
                 $setting = $this->setSetting($key, $default, isLocked: $isLocked, isEncrypted: $isEncrypted);
             }
 
@@ -30,11 +30,11 @@ class SettingsService
                 }
             }
 
-            if ($default != null && $setting->value == null) {
+            if ($default !== null && $setting->value === null) {
                 return $default;
             }
 
-            if ($setting->value == null && $default == null) {
+            if ($setting->value === null && $default === null) {
                 return config($key);
             }
 
@@ -44,7 +44,7 @@ class SettingsService
                 default => $setting->value,
             };
         } catch (Exception) {
-            if ($default != null) {
+            if ($default !== null) {
                 return $default;
             }
 
@@ -60,12 +60,12 @@ class SettingsService
             $isEncrypted = true;
         }
 
-        if ($setting == null) {
+        if ($setting === null) {
             $setting = new Setting;
             $setting->key = $key;
-            if ($value != null) {
+            if ($value !== null) {
                 $value = ($isEncrypted) ? encrypt($value) : $value;
-            } elseif (config($key) != null) {
+            } elseif (config($key) !== null) {
                 $value = ($isEncrypted) ? encrypt(config($key)) : config($key);
             }
 
@@ -94,7 +94,7 @@ class SettingsService
             $isEncrypted = true;
         }
 
-        if ($setting != null) {
+        if ($setting !== null) {
             if ($setting->is_locked) {
                 Log::debug('Attempted to update locked setting: '.$setting->key);
 
@@ -121,7 +121,7 @@ class SettingsService
     {
         $setting = Setting::where('key', $key)->first();
 
-        if ($setting != null) {
+        if ($setting !== null) {
             return $setting->delete();
         }
 

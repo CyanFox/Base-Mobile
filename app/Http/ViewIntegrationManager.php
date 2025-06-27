@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getAll()
  * @method static string|null render(string $name, \Closure $callback)
  *
- * @see \App\Services\ViewIntegrationService
+ * @see ViewIntegrationService
  */
 class ViewIntegrationManager extends Facade
 {

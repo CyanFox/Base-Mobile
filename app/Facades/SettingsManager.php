@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void updateSettings(array $settings)
  * @method static bool deleteSetting(string $key)
  *
- * @see \App\Services\SettingsService
+ * @see SettingsService
  */
 class SettingsManager extends Facade
 {
