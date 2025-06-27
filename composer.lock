@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb812e27bb4e8f67d4a64cbf8a8d1217",
+    "content-hash": "71cb94efaf9224b1c73240f93478b2e8",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4825,16 +4825,16 @@
         },
         {
             "name": "nwidart/laravel-modules",
-            "version": "v11.1.10",
+            "version": "v12.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nWidart/laravel-modules.git",
-                "reference": "6a987af3103bcf2dc31ebd18a68373bc8c7a99f7"
+                "reference": "ffad5c797e6a11d0e2d9a1bad422fa456589531e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/6a987af3103bcf2dc31ebd18a68373bc8c7a99f7",
-                "reference": "6a987af3103bcf2dc31ebd18a68373bc8c7a99f7",
+                "url": "https://api.github.com/repos/nWidart/laravel-modules/zipball/ffad5c797e6a11d0e2d9a1bad422fa456589531e",
+                "reference": "ffad5c797e6a11d0e2d9a1bad422fa456589531e",
                 "shasum": ""
             },
             "require": {
@@ -4846,12 +4846,12 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^v3.52",
-                "laravel/framework": "^v11.33",
+                "laravel/framework": "^v12.0",
                 "laravel/pint": "^1.16",
                 "mockery/mockery": "^1.6",
-                "orchestra/testbench": "^v9.0",
-                "phpstan/phpstan": "^1.4",
-                "phpunit/phpunit": "^11.0",
+                "orchestra/testbench": "^v10.0",
+                "phpstan/phpstan": "^2.0",
+                "phpunit/phpunit": "^11.5.3|^12.0.",
                 "spatie/phpunit-snapshot-assertions": "^5.0"
             },
             "type": "library",
@@ -4865,7 +4865,7 @@
                     ]
                 },
                 "branch-alias": {
-                    "dev-master": "11.0-dev"
+                    "dev-master": "12.x-dev"
                 }
             },
             "autoload": {
@@ -4898,7 +4898,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nWidart/laravel-modules/issues",
-                "source": "https://github.com/nWidart/laravel-modules/tree/v11.1.10"
+                "source": "https://github.com/nWidart/laravel-modules/tree/v12.0.3"
             },
             "funding": [
                 {
@@ -4910,7 +4910,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-18T09:58:04+00:00"
+            "time": "2025-04-28T07:57:29+00:00"
         },
         {
             "name": "openspout/openspout",
@@ -11262,16 +11262,16 @@
         },
         {
             "name": "wire-elements/modal",
-            "version": "2.0.13",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wire-elements/modal.git",
-                "reference": "65d9db80a0befaa38ae99a47a26818e784aa7101"
+                "reference": "cf7eb0ec35d27807ed6380efe9f949c6aa9351f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wire-elements/modal/zipball/65d9db80a0befaa38ae99a47a26818e784aa7101",
-                "reference": "65d9db80a0befaa38ae99a47a26818e784aa7101",
+                "url": "https://api.github.com/repos/wire-elements/modal/zipball/cf7eb0ec35d27807ed6380efe9f949c6aa9351f8",
+                "reference": "cf7eb0ec35d27807ed6380efe9f949c6aa9351f8",
                 "shasum": ""
             },
             "require": {
@@ -11314,7 +11314,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wire-elements/modal/issues",
-                "source": "https://github.com/wire-elements/modal/tree/2.0.13"
+                "source": "https://github.com/wire-elements/modal/tree/3.0.2"
             },
             "funding": [
                 {
@@ -11322,7 +11322,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-20T13:07:12+00:00"
+            "time": "2025-06-20T14:12:38+00:00"
         }
     ],
     "packages-dev": [
