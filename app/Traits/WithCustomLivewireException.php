@@ -11,6 +11,10 @@ trait WithCustomLivewireException
 {
     public function exception($e, $stopPropagation)
     {
+        if (config('app.env') === 'local' || config('app.debug')) {
+            throw $e; // @phpstan-ignore-line
+        }
+
         if ($e instanceof HttpException) {
             return;
         }
