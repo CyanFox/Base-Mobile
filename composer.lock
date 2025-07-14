@@ -5999,16 +5999,16 @@
         },
         {
             "name": "realzone22/pengutables",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RealZone22/PenguTables.git",
-                "reference": "933c625fbc2e91d1e4fbd27893806bfa638e140f"
+                "reference": "648659cb830c22540322ae777980a1d243b70668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RealZone22/PenguTables/zipball/933c625fbc2e91d1e4fbd27893806bfa638e140f",
-                "reference": "933c625fbc2e91d1e4fbd27893806bfa638e140f",
+                "url": "https://api.github.com/repos/RealZone22/PenguTables/zipball/648659cb830c22540322ae777980a1d243b70668",
+                "reference": "648659cb830c22540322ae777980a1d243b70668",
                 "shasum": ""
             },
             "require": {
@@ -6064,7 +6064,7 @@
             ],
             "support": {
                 "issues": "https://github.com/RealZone22/PenguTables/issues",
-                "source": "https://github.com/RealZone22/PenguTables/tree/1.0.3"
+                "source": "https://github.com/RealZone22/PenguTables/tree/1.0.4"
             },
             "funding": [
                 {
@@ -6072,7 +6072,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-24T16:30:38+00:00"
+            "time": "2025-07-14T12:10:57+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
