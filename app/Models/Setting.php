@@ -10,6 +10,7 @@ class Setting extends Model
     protected $fillable = [
         'key',
         'value',
+        'is_textarea',
         'is_locked',
     ];
 
