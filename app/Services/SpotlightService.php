@@ -126,18 +126,14 @@ class SpotlightService
             return false;
         }
 
-        if (method_exists($user, 'hasAnyPermission')) {
-            return $user->hasAnyPermission($item['permissions']);
-        }
-
         if (is_array($item['permissions'])) {
             foreach ($item['permissions'] as $permission) {
-                if ($user->can($permission)) {
+                if ($user->can($permission)) { // @phpstan-ignore-line
                     return true;
                 }
             }
         } else {
-            return $user->can($item['permissions']);
+            return $user->can($item['permissions']); // @phpstan-ignore-line
         }
 
         return false;

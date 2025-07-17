@@ -87,7 +87,7 @@ trait SpotlightSearchable
         }
 
         foreach ($permissions as $permission) {
-            if ($user->can($permission)) {
+            if ($user->can($permission)) { // @phpstan-ignore-line
                 return true;
             }
         }
