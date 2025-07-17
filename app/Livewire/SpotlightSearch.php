@@ -8,9 +8,13 @@ use Livewire\Component;
 class SpotlightSearch extends Component
 {
     public $searchTerm = '';
+
     public $isOpen = false;
+
     public $selectedIndex = 0;
+
     public $results = [];
+
     public $staticItems = [];
 
     protected $listeners = [
@@ -45,6 +49,7 @@ class SpotlightSearch extends Component
     {
         if (empty($this->searchTerm)) {
             $this->loadStaticItems();
+
             return;
         }
 
@@ -111,6 +116,7 @@ class SpotlightSearch extends Component
     public function getDisplayItems()
     {
         $items = empty($this->searchTerm) ? $this->staticItems : $this->results;
+
         return array_slice($items, 0, settings('internal.spotlight.results_limit', config('settings.spotlight_result_limit', 10)));
     }
 

@@ -11,6 +11,7 @@ use Symfony\Component\Finder\Finder;
 class SettingsDiscoverCommand extends Command
 {
     protected $signature = 'settings:discover';
+
     protected $description = 'Discover and create settings from their usage in the code.';
 
     protected SettingsService $settingsService;
@@ -52,6 +53,7 @@ class SettingsDiscoverCommand extends Command
 
         if (empty($uniqueKeys)) {
             $this->info('No settings found.');
+
             return 0;
         }
 
@@ -63,6 +65,7 @@ class SettingsDiscoverCommand extends Command
         }
 
         $this->info('Settings discovery and creation complete.');
+
         return 0;
     }
 }
