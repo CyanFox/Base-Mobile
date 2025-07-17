@@ -219,49 +219,4 @@ class SpotlightService
 
         return false;
     }
-
-    protected function isTranslationKey(string $text): bool
-    {
-        return str_contains($text, '::') ||
-            preg_match('/^[a-z0-9_]+\.[a-z0-9_.]+$/i', $text);
-    }
-
-    protected function refreshTranslations(array &$item): void
-    {
-        if (isset($item['raw_module'])) {
-            $item['module'] = __($item['raw_module']);
-        }
-
-        if (isset($item['raw_title'])) {
-            $item['title'] = __($item['raw_title']);
-        }
-
-        if (isset($item['raw_description'])) {
-            $item['description'] = __($item['raw_description']);
-        }
-    }
-
-    protected function userCanViewItem(array $item): bool
-    {
-        if (empty($item['permissions'])) {
-            return true;
-        }
-
-        $user = auth()->user();
-        if (! $user) {
-            return false;
-        }
-
-        if (is_array($item['permissions'])) {
-            foreach ($item['permissions'] as $permission) {
-                if ($user->can($permission)) { // @phpstan-ignore-line
-                    return true;
-                }
-            }
-        } else {
-            return $user->can($item['permissions']); // @phpstan-ignore-line
-        }
-
-        return false;
-    }
 }
