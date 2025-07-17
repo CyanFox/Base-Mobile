@@ -96,23 +96,29 @@ trait SpotlightSearchable
         }
 
         $fields = $this->spotlightSearchableFields();
-        $searchTerm = "%{$term}%";
+        $searchTerms = array_filter(explode(' ', $term));
 
-        return $query->where(function ($query) use ($searchTerm, $fields, $term) {
-            foreach ($fields as $field) {
-                $query->orWhere($field, 'LIKE', $searchTerm);
-            }
+        return $query->where(function ($query) use ($searchTerms, $fields) {
+            foreach ($searchTerms as $term) {
+                $searchTerm = "%{$term}%";
 
-            $moduleName = $this->spotlightModuleName();
-            if ($moduleName) {
-                if ($this->isTranslationKey($moduleName)) {
-                    $translatedModule = __($moduleName);
-                    if (mb_stripos($translatedModule, $term) !== false) {
-                        $query->orWhereNotNull($this->getKeyName());
+                $query->where(function ($subQuery) use ($searchTerm, $fields, $term) {
+                    foreach ($fields as $field) {
+                        $subQuery->orWhere($field, 'LIKE', $searchTerm);
                     }
-                } elseif (mb_stripos($moduleName, $term) !== false) {
-                    $query->orWhereNotNull($this->getKeyName());
-                }
+
+                    $moduleName = $this->spotlightModuleName();
+                    if ($moduleName) {
+                        if ($this->isTranslationKey($moduleName)) {
+                            $translatedModule = __($moduleName);
+                            if (mb_stripos($translatedModule, $term) !== false) {
+                                $subQuery->orWhereNotNull($this->getKeyName());
+                            }
+                        } elseif (mb_stripos($moduleName, $term) !== false) {
+                            $subQuery->orWhereNotNull($this->getKeyName());
+                        }
+                    }
+                });
             }
         });
     }

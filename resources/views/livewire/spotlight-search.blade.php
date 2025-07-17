@@ -81,19 +81,19 @@
                 <x-divider class="mt-2"/>
             </div>
 
-            <div class="max-h-80 scroll-py-2 overflow-y-auto p-0.5" id="spotlight-results">
+            <div class="scroll-py-2 overflow-y-auto p-0.5" id="spotlight-results">
                 @if(count($results) > 0)
                     <ul role="listbox" class="space-y-2">
                         @foreach($results as $index => $result)
                             <li
                                 wire:key="result-{{ $result['id'] }}"
                                 wire:click="selectResult({{ $index }})"
-                                class="cursor-pointer p-2 rounded-lg transition-colors duration-150 {{ $selectedIndex === $index ? 'text-on-surface ring-2 ring-primary-500 dark:text-on-surface-dark' : 'hover:bg-gray-100 dark:hover:bg-gray-800' }}"
+                                class="cursor-pointer p-2 rounded-lg transition-colors duration-150 {{ $selectedIndex === $index ? 'text-on-surface ring-2 ring-on-surface dark:ring-on-surface-dark dark:text-on-surface-dark' : 'hover:bg-gray-100 dark:hover:bg-gray-800' }}"
                                 role="option"
                                 @mouseenter="$wire.selectedIndex = {{ $index }}"
                             >
                                 <div
-                                    class="flex items-center {{ $selectedIndex === $index ? 'text-primary-100 dark:text-primary-200' : 'text-on-surface dark:text-on-surface-dark' }}">
+                                    class="flex items-center text-on-surface dark:text-on-surface-dark">
                                     <div
                                         class="flex-shrink-0">
                                         <i class="{{ $result['icon'] }}"></i>
@@ -110,13 +110,13 @@
                                     @if(isset($result['module']))
                                         <x-badge class="cursor-pointer"
                                                  wire:click="$set('searchTerm', '{{ $result['module'] }}')"
-                                                 x-on:click.stop>
+                                                 x-on:click.stop="">
                                             {{ __($result['module']) }}
                                         </x-badge>
                                     @elseif(isset($result['model_type']) && $result['model_type'] !== 'manual')
                                         <x-badge class="cursor-pointer"
                                                  wire:click="$set('searchTerm', '{{ class_basename($result['model_type']) }}')"
-                                                 x-on:click.stop>
+                                                 x-on:click.stop="">
                                             {{ class_basename($result['model_type']) }}
                                         </x-badge>
                                     @endif
@@ -137,17 +137,17 @@
 
                     <div class="mb-2">
                         <h3 class="px-2 pt-1 text-xs font-semibold text-gray-500">{{ __('spotlight.quick_access') }}</h3>
-                        <ul class="mt-1" role="listbox">
+                        <ul class="mt-1 space-y-2" role="listbox">
                             @foreach($this->getDisplayItems() as $index => $item)
                                 <li
                                     wire:key="result-{{ $item['id'] }}"
                                     wire:click="selectResult({{ $index }})"
-                                    class="cursor-pointer p-2 rounded-lg transition-colors duration-150 {{ $selectedIndex === $index ? 'text-on-surface ring-2 ring-primary-500 dark:text-on-surface-dark' : 'hover:bg-gray-100 dark:hover:bg-gray-800' }}"
+                                    class="cursor-pointer p-2 rounded-lg transition-colors duration-150 {{ $selectedIndex === $index ? 'text-on-surface ring-2 ring-on-surface dark:ring-on-surface-dark dark:text-on-surface-dark' : 'hover:bg-gray-100 dark:hover:bg-gray-800' }}"
                                     role="option"
                                     @mouseenter="$wire.selectedIndex = {{ $index }}"
                                 >
                                     <div
-                                        class="flex items-center {{ $selectedIndex === $index ? 'text-primary-100 dark:text-primary-200' : 'text-on-surface dark:text-on-surface-dark' }}">
+                                        class="flex items-center text-on-surface dark:text-on-surface-dark">
                                         <div
                                             class="flex-shrink-0">
                                             <i class="{{ $item['icon'] }}"></i>
@@ -158,7 +158,7 @@
                                         @if(isset($item['module']))
                                             <x-badge class="cursor-pointer"
                                                      wire:click="$set('searchTerm', '{{ $item['module'] }}')"
-                                                     x-on:click.stop>
+                                                     x-on:click.stop="">
                                                 {{ __($item['module']) }}
                                             </x-badge>
                                         @endif

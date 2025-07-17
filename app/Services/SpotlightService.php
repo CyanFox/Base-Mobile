@@ -108,6 +108,7 @@ class SpotlightService
         foreach ($this->registeredModels as $modelClass) {
             $model = new $modelClass;
             $modelResults = $modelClass::spotlightSearch($term)
+                ->limit(settings('internal.spotlight.results_limit', config('settings.spotlight_result_limit', 10)))
                 ->get()
                 ->filter(function ($item) {
                     return $item->userCanViewInSpotlight();
@@ -171,7 +172,7 @@ class SpotlightService
             return strcmp($aTitle, $bTitle);
         });
 
-        return array_slice($results, 0);
+        return array_slice($results, 0, settings('internal.spotlight.results_limit', config('settings.spotlight_result_limit', 10)));
     }
 
     protected function isTranslationKey(string $text): bool
