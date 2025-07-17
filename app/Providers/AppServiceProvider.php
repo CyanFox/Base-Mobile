@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\SpotlightService;
 use App\Services\ViewIntegrationService;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Notifications\Notification;
@@ -21,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ViewIntegrationService::class, function () {
             return new ViewIntegrationService;
+        });
+
+        $this->app->singleton('spotlight', function ($app) {
+            return new SpotlightService();
         });
     }
 
