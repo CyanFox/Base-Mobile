@@ -63,12 +63,6 @@ trait SpotlightSearchable
         return null;
     }
 
-    protected function isTranslationKey(string $text): bool
-    {
-        return str_contains($text, '::') ||
-            preg_match('/^[a-z0-9_]+\.[a-z0-9_.]+$/i', $text);
-    }
-
     public function userCanViewInSpotlight(): bool
     {
         $permissions = $this->spotlightPermissions();
@@ -78,7 +72,7 @@ trait SpotlightSearchable
         }
 
         $user = auth()->user();
-        if (!$user) {
+        if (! $user) {
             return false;
         }
 
@@ -102,24 +96,36 @@ trait SpotlightSearchable
         }
 
         $fields = $this->spotlightSearchableFields();
-        $searchTerm = "%{$term}%";
+        $searchTerms = array_filter(explode(' ', $term));
 
-        return $query->where(function ($query) use ($searchTerm, $fields, $term) {
-            foreach ($fields as $field) {
-                $query->orWhere($field, 'LIKE', $searchTerm);
-            }
+        return $query->where(function ($query) use ($searchTerms, $fields) {
+            foreach ($searchTerms as $term) {
+                $searchTerm = "%{$term}%";
 
-            $moduleName = $this->spotlightModuleName();
-            if ($moduleName) {
-                if ($this->isTranslationKey($moduleName)) {
-                    $translatedModule = __($moduleName);
-                    if (stripos($translatedModule, $term) !== false) {
-                        $query->orWhereNotNull($this->getKeyName());
+                $query->where(function ($subQuery) use ($searchTerm, $fields, $term) {
+                    foreach ($fields as $field) {
+                        $subQuery->orWhere($field, 'LIKE', $searchTerm);
                     }
-                } else if (stripos($moduleName, $term) !== false) {
-                    $query->orWhereNotNull($this->getKeyName());
-                }
+
+                    $moduleName = $this->spotlightModuleName();
+                    if ($moduleName) {
+                        if ($this->isTranslationKey($moduleName)) {
+                            $translatedModule = __($moduleName);
+                            if (mb_stripos($translatedModule, $term) !== false) {
+                                $subQuery->orWhereNotNull($this->getKeyName());
+                            }
+                        } elseif (mb_stripos($moduleName, $term) !== false) {
+                            $subQuery->orWhereNotNull($this->getKeyName());
+                        }
+                    }
+                });
             }
         });
+    }
+
+    protected function isTranslationKey(string $text): bool
+    {
+        return str_contains($text, '::') ||
+            preg_match('/^[a-z0-9_]+\.[a-z0-9_.]+$/i', $text);
     }
 }
