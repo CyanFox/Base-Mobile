@@ -13,3 +13,4 @@ parameters:
     noEnvCallsOutsideOfConfig: false
     excludePaths:
         - ./app/Traits/WithCustomLivewireException.php
+        - ./app/Traits/SpotlightSearchable.php
