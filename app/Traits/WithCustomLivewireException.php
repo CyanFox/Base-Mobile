@@ -21,7 +21,7 @@ trait WithCustomLivewireException
             $this->log($e, 'error'); // @phpstan-ignore-line
         }
 
-        if (!$e instanceof ValidationException) {
+        if (! $e instanceof ValidationException) {
             Notification::make()
                 ->title(__('messages.notifications.something_went_wrong'))
                 ->danger()

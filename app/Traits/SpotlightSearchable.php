@@ -63,12 +63,6 @@ trait SpotlightSearchable
         return null;
     }
 
-    protected function isTranslationKey(string $text): bool
-    {
-        return str_contains($text, '::') ||
-            preg_match('/^[a-z0-9_]+\.[a-z0-9_.]+$/i', $text);
-    }
-
     public function userCanViewInSpotlight(): bool
     {
         $permissions = $this->spotlightPermissions();
@@ -78,7 +72,7 @@ trait SpotlightSearchable
         }
 
         $user = auth()->user();
-        if (!$user) {
+        if (! $user) {
             return false;
         }
 
@@ -113,13 +107,19 @@ trait SpotlightSearchable
             if ($moduleName) {
                 if ($this->isTranslationKey($moduleName)) {
                     $translatedModule = __($moduleName);
-                    if (stripos($translatedModule, $term) !== false) {
+                    if (mb_stripos($translatedModule, $term) !== false) {
                         $query->orWhereNotNull($this->getKeyName());
                     }
-                } else if (stripos($moduleName, $term) !== false) {
+                } elseif (mb_stripos($moduleName, $term) !== false) {
                     $query->orWhereNotNull($this->getKeyName());
                 }
             }
         });
+    }
+
+    protected function isTranslationKey(string $text): bool
+    {
+        return str_contains($text, '::') ||
+            preg_match('/^[a-z0-9_]+\.[a-z0-9_.]+$/i', $text);
     }
 }
