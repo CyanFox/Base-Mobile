@@ -25,6 +25,7 @@
         "pusher/pusher-php-server": "^7.2",
         "realzone22/pengublade": "^1.0",
         "realzone22/pengutables": "^1.0",
+        "sentry/sentry-laravel": "^4.15",
         "wire-elements/modal": "^3.0"
     },
     "require-dev": {
