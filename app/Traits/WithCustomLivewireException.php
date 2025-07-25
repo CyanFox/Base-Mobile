@@ -6,6 +6,7 @@ use Exception;
 use Filament\Notifications\Notification;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+
 use function Sentry\captureException;
 
 trait WithCustomLivewireException
