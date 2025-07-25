@@ -6,11 +6,14 @@ use Exception;
 use Filament\Notifications\Notification;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use function Sentry\captureException;
 
 trait WithCustomLivewireException
 {
     public function exception($e, $stopPropagation)
     {
+        captureException($e);
+
         if ($e instanceof HttpException) {
             return;
         }

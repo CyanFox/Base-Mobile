@@ -7,7 +7,7 @@ on:
 
 jobs:
   push:
-    name: "cyanfox-projects/base"
+    name: "cyanfox/base"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,4 +27,4 @@ jobs:
           platforms: linux/amd64, linux/arm64
           push: true
           tags: |
-            ghcr.io/cyanfox/cyanfox-base:latest
+            ghcr.io/cyanfox/base:latest
