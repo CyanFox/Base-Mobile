@@ -53,9 +53,7 @@ class AppServiceProvider extends ServiceProvider
 
         Notifications::alignment(Alignment::tryFrom(settings('internal.app.notifications.alignment', 'center')));
         Notifications::verticalAlignment(VerticalAlignment::tryFrom(settings('internal.app.notifications.vertical_alignment', 'end')));
-        Notification::configureUsing(function (Notification $notification): void {
-            $notification->view('components.cf.notification');
-        });
+
 
         if (Str::startsWith(config('app.url') ?? '', 'https://') || settings('internal.app.force_https')) {
             URL::forceScheme('https');
