@@ -39,12 +39,17 @@ return [
     'send_default_pii' => env('SENTRY_SEND_DEFAULT_PII', false),
 
     // @see: https://docs.sentry.io/platforms/php/guides/laravel/configuration/options/#ignore-exceptions
-    // 'ignore_exceptions' => [],
+    'ignore_exceptions' => [
+        Symfony\Component\HttpKernel\Exception\HttpException::class,
+        Illuminate\Database\Eloquent\ModelNotFoundException::class,
+        Illuminate\Auth\Access\AuthorizationException::class,
+        Illuminate\Validation\ValidationException::class,
+    ],
 
     // @see: https://docs.sentry.io/platforms/php/guides/laravel/configuration/options/#ignore-transactions
     'ignore_transactions' => [
         // Ignore Laravel's default health URL
-        '/up',
+        '/internal/health',
     ],
 
     // Breadcrumb specific configuration

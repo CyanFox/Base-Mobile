@@ -3,8 +3,8 @@
 namespace App\Traits;
 
 use Exception;
-use Filament\Notifications\Notification;
 use Illuminate\Validation\ValidationException;
+use Masmerise\Toaster\Toaster;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 use function Sentry\captureException;
@@ -26,10 +26,7 @@ trait WithCustomLivewireException
         }
 
         if (! $e instanceof ValidationException) {
-            Notification::make()
-                ->title(__('messages.notifications.something_went_wrong'))
-                ->danger()
-                ->send();
+            Toaster::error(__('messages.notifications.something_went_wrong'));
         }
 
         $stopPropagation();

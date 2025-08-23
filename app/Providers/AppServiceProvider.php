@@ -4,10 +4,6 @@ namespace App\Providers;
 
 use App\Services\SpotlightService;
 use App\Services\ViewIntegrationService;
-use Filament\Notifications\Livewire\Notifications;
-use Filament\Notifications\Notification;
-use Filament\Support\Enums\Alignment;
-use Filament\Support\Enums\VerticalAlignment;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
@@ -50,12 +46,6 @@ class AppServiceProvider extends ServiceProvider
                 Config::set($key, $value);
             }
         }
-
-        Notifications::alignment(Alignment::tryFrom(settings('internal.app.notifications.alignment', 'center')));
-        Notifications::verticalAlignment(VerticalAlignment::tryFrom(settings('internal.app.notifications.vertical_alignment', 'end')));
-        Notification::configureUsing(function (Notification $notification): void {
-            $notification->view('components.cf.notification');
-        });
 
         if (Str::startsWith(config('app.url') ?? '', 'https://') || settings('internal.app.force_https')) {
             URL::forceScheme('https');
