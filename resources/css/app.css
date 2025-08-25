@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 @import 'lucide-static/font/lucide.css';
+@import 'tippy.js/dist/tippy.css';
 @config '../../tailwind.config.js';
 
 /* Penguin UI Theme */
