@@ -53,7 +53,7 @@ if (! function_exists('formatDateTime')) {
             return Carbon::parse($date)->format($format);
         }
 
-        return Carbon::parse($date)->format(settings('internal.app.date_format', 'Y-m-d') . ' ' . settings('internal.app.time_format', 'H:i'));
+        return Carbon::parse($date)->format(settings('internal.app.date_format', 'Y-m-d').' '.settings('internal.app.time_format', 'H:i'));
     }
 }
 
