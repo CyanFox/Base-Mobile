@@ -4,6 +4,7 @@ use App\Facades\SettingsManager;
 use App\Services\ModuleService;
 use App\Services\SettingsService;
 use App\Services\ViewIntegrationService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Carbon;
 
 if (! function_exists('viewIntegration')) {
@@ -91,5 +92,16 @@ if (! function_exists('carbon')) {
     function carbon($time = null, $tz = null): Carbon
     {
         return new Carbon($time, $tz);
+    }
+}
+
+if (! function_exists('apiResponse')) {
+    function apiResponse($message, $data = null, bool $success = true, int $statusCode = 200): JsonResponse
+    {
+        return response()->json([
+            'success' => $success,
+            'message' => $message,
+            'data' => $data,
+        ], $statusCode);
     }
 }

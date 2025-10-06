@@ -13,6 +13,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "dedoc/scramble": "^0.12",
         "laravel/framework": "^12.0",
         "laravel/reverb": "^1.0",
         "laravel/tinker": "^2.9",
@@ -26,6 +27,7 @@
         "realzone22/pengublade": "^1.0",
         "realzone22/pengutables": "^1.0",
         "sentry/sentry-laravel": "^4.15",
+        "spatie/laravel-medialibrary": "^11.15",
         "wire-elements/modal": "^3.0"
     },
     "require-dev": {

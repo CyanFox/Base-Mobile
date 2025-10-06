@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class Setting extends Model
@@ -12,11 +13,26 @@ class Setting extends Model
         'value',
         'is_textarea',
         'is_locked',
+        'is_public',
     ];
 
     protected static function boot()
     {
         parent::boot();
+
+        static::retrieved(function ($setting) {
+            Cache::remember('setting_'.$setting->key, 60*60*24, function () use ($setting) {
+                return $setting->value;
+            });
+        });
+
+        static::creating(function ($setting) {
+            Cache::remember('setting_'.$setting->key, 60*60*24, function () use ($setting) {
+                return $setting->value;
+            });
+
+            return true;
+        });
 
         static::updating(function ($setting) {
             if ($setting->isDirty('is_locked')) {
@@ -27,6 +43,14 @@ class Setting extends Model
 
                 return false;
             }
+
+            Cache::forget('setting_'.$setting->key);
+
+            return true;
+        });
+
+        static::deleting(function ($setting) {
+            Cache::forget('setting_'.$setting->key);
 
             return true;
         });

@@ -52,7 +52,7 @@ class SettingsService
         }
     }
 
-    public function setSetting(string $key, ?string $value = null, bool $isLocked = false, bool $isEncrypted = false, bool $updateIfExists = false): Setting
+    public function setSetting(string $key, ?string $value = null, ?bool $isLocked = null, bool $isEncrypted = false, bool $updateIfExists = false, ?bool $public = null): Setting
     {
         $setting = Setting::where('key', $key)->first();
 
@@ -70,7 +70,8 @@ class SettingsService
             }
 
             $setting->value = $value;
-            $setting->is_locked = $isLocked;
+            $setting->is_locked = $isLocked ?? false;
+            $setting->is_public = $public ?? false;
             $setting->save();
         } elseif ($updateIfExists) {
             if ($setting->is_locked) {
@@ -79,14 +80,15 @@ class SettingsService
                 return $setting;
             }
             $setting->value = ($isEncrypted) ? encrypt($value) : $value;
-            $setting->is_locked = $isLocked;
+            $setting->is_locked = $isLocked ?? $setting->is_locked;
+            $setting->is_public = $public ?? $setting->is_public;
             $setting->save();
         }
 
         return $setting;
     }
 
-    public function updateSetting(string $key, ?string $value, bool $isLocked = false, bool $isEncrypted = false): Setting
+    public function updateSetting(string $key, ?string $value, bool $isLocked = false, bool $isEncrypted = false, ?bool $public = null): Setting
     {
         $setting = Setting::where('key', $key)->first();
 
@@ -101,7 +103,8 @@ class SettingsService
                 return $setting;
             }
             $setting->value = ($isEncrypted) ? encrypt($value) : $value;
-            $setting->is_locked = $isLocked;
+            $setting->is_locked = $isLocked ?? $setting->is_locked;
+            $setting->is_public = $public ?? $setting->is_public;
             $setting->save();
         } else {
             $setting = $this->setSetting($key, $value, $isLocked, $isEncrypted);
